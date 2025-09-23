@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects | Sushant Rana</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        :root {
+            --primary: #0d6efd;
+            --secondary: #6c757d;
+            --accent: #ffc107;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        .navbar {
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.9);
+        }
+        .project-card {
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: none;
+            overflow: hidden;
+        }
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        .project-img {
+            height: 200px;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        .project-card:hover .project-img {
+            transform: scale(1.05);
+        }
+        .tech-badge {
+            background-color: #f8f9fa;
+            color: var(--secondary);
+            border: 1px solid #dee2e6;
+            margin-right: 5px;
+            margin-bottom: 5px;
+        }
+        .modal-img {
+            max-height: 300px;
+            object-fit: contain;
+        }
+        .chart-container {
+            position: relative;
+            height: 250px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">Sushant Rana</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="projects.html">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="resume.html">Resume</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Projects Header -->
+    <section class="py-5 mt-5 bg-light">
+        <div class="container py-5 text-center">
+            <h1 class="display-5 fw-bold mb-3" data-aos="fade-up">My <span class="text-primary">Projects</span></h1>
+            <p class="lead" data-aos="fade-up" data-aos-delay="100">Practical applications of machine learning and AI</p>
+        </div>
+    </section>
+
+    <!-- Projects Grid -->
+    <section class="py-5">
+        <div class="container py-5">
+            <div class="row g-4">
+                <!-- Project 1 -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up">
+                    <div class="project-card card h-100 border-0 shadow-sm" data-bs-toggle="modal" data-bs-target="#project1Modal">
+                        <img src="http://static.photos/science/640x360/2" class="project-img card-img-top" alt="Sentiment Analysis">
+                        <div class="card-body">
+                            <h5 class="card-title">Sentiment Analysis Engine</h5>
+                            <p class="card-text text-muted">Understanding human emotions through text using NLP techniques.</p>
+                            <div class="mt-3">
+                                <span class="badge tech-badge">Python</span>
+                                <span class="badge tech-badge">NLTK</span>
+                                <span class="badge tech-badge">TensorFlow</span>
+                                <span class="badge tech-badge">Flask</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="project-card card h-100 border-0 shadow-sm" data-bs-toggle="modal" data-bs-target="#project2Modal">
+                        <img src="http://static.photos/technology/640x360/3" class="project-img card-img-top" alt="Image Classification">
+                        <div class="card-body">
+                            <h5 class="card-title">Image Classification Model</h5>
+                            <p class="card-text text-muted">Computer vision system that categorizes images with 94% accuracy.</p>
+                            <div class="mt-3">
+                                <span class="badge tech-badge">Python</span>
+                                <span class="badge tech-badge">PyTorch</span>
+                                <span class="badge tech-badge">OpenCV</span>
+                                <span class="badge tech-badge">CNN</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="project-card card h-100 border-0 shadow-sm" data-bs-toggle="modal" data-bs-target="#project3Modal">
+                        <img src="http://static.photos/finance/640x360/1" class="project-img card-img-top" alt="Stock Predictor">
+                        <div class="card-body">
+                            <h5 class="card-title">Stock Price Predictor</h5>
+                            <p class="card-text text-muted">LSTM neural network forecasting financial trends.</p>
+                            <div class="mt-3">
+                                <span class="badge tech-badge">Python</span>
+                                <span class="badge tech-badge">Keras</span>
+                                <span class="badge tech-badge">LSTM</span>
+                                <span class="badge tech-badge">Pandas</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up">
+                    <div class="project-card card h-100 border-0 shadow-sm" data-bs-toggle="modal" data-bs-target="#project4Modal">
+                        <img src="http://static.photos/medical/640x360/1" class="project-img card-img-top" alt="Medical Diagnosis">
+                        <div class="card-body">
+                            <h5 class="card-title">Medical Diagnosis Assistant</h5>
+                            <p class="card-text text-muted">AI system supporting doctors in diagnosing diseases from symptoms.</p>
+                            <div class="mt-3">
+                                <span class="badge tech-badge">Python</span>
+                                <span class="badge tech-badge">Scikit-learn</span>
+                                <span class="badge tech-badge">XGBoost</span>
+                                <span class="badge tech-badge">Flask</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 5 -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="project-card card h-100 border-0 shadow-sm" data-bs-toggle="modal" data-bs-target="#project5Modal">
+                        <img src="http://static.photos/office/640x360/1" class="project-img card-img-top" alt="Chatbot">
+                        <div class="card-body">
+                            <h5 class="card-title">AI Customer Support Chatbot</h5>
+                            <p class="card-text text-muted">Conversational agent handling common customer inquiries.</p>
+                            <div class="mt-3">
+                                <span class="badge tech-badge">Python</span>
+                                <span class="badge tech-badge">Transformers</span>
+                                <span class="badge tech-badge">HuggingFace</span>
+                                <span class="badge tech-badge">FastAPI</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 6 -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="project-card card h-100 border-0 shadow-sm" data-bs-toggle="modal" data-bs-target="#project6Modal">
+                        <img src="http://static.photos/education/640x360/1" class="project-img card-img-top" alt="Recommendation System">
+                        <div class="card-body">
+                            <h5 class="card-title">Personalized Learning Recommender</h5>
+                            <p class="card-text text-muted">System suggesting educational content based on user behavior.</p>
+                            <div class="mt-3">
+                                <span class="badge tech-badge">Python</span>
+                                <span class="badge tech-badge">Surprise</span>
+                                <span class="badge tech-badge">Collaborative Filtering</span>
+                                <span class="badge tech-badge">Django</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Modals -->
+    <!-- Project 1 Modal -->
+    <div class="modal fade" id="project1Modal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Sentiment Analysis Engine</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="http://static.photos/science/1200x630/2" class="img-fluid rounded mb-4 modal-img" alt="Sentiment Analysis">
+                    <p>This project involved building a sentiment analysis model that can accurately classify text into positive, negative, or neutral sentiments. The system was trained on a dataset of 50,000 product reviews and achieved 89% accuracy on the test set.</p>
+                    <p>Key features include:</p>
+                    <ul>
+                        <li>Custom word embeddings trained on domain-specific vocabulary</li>
+                        <li>Attention mechanism to identify sentiment-bearing words</li>
+                        <li>Deployed as a REST API serving predictions in real-time</li>
+                    </ul>
+                    <div class="chart-container">
+                        <canvas id="accuracyChart1"></canvas>
+                    </div>
+                    <div class="mt-4">
+                        <span class="badge bg-primary me-2">NLP</span>
+                        <span class="badge bg-primary me-2">Deep Learning</span>
+                        <span class="badge bg-primary">Web Deployment</span>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <a href="#" class="btn btn-outline-secondary me-2"><i data-feather="github"></i> View Code</a>
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Project 2 Modal -->
+    <div class="modal fade" id="project2Modal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Image Classification Model</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="http://static.photos/technology/1200x630/3" class="img-fluid rounded mb-4 modal-img" alt="Image Classification">
+                    <p>A convolutional neural network designed to classify images into 10 different categories. The model was trained on CIFAR-10 dataset and achieved 94% accuracy through careful architecture design and data augmentation.</p>
+                    <p>Technical highlights:</p>
+                    <ul>
+                        <li>Custom ResNet architecture with skip connections</li>
+                        <li>Implemented data augmentation pipeline to improve generalization</li>
+                        <li>Model pruning and quantization for mobile deployment</li>
+                    </ul>
+                    <div class="chart-container">
+                        <canvas id="accuracyChart2"></canvas>
+                    </div>
+                    <div class="mt-4">
+                        <span class="badge bg-primary me-2">Computer Vision</span>
+                        <span class="badge bg-primary me-2">CNN</span>
+                        <span class="badge bg-primary">Model Optimization</span>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <a href="#" class="btn btn-outline-secondary me-2"><i data-feather="github"></i> View Code</a>
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Other project modals would follow the same pattern -->
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <p class="mb-0">© 2023 Sushant Rana. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <a href="https://github.com/sushanrana2005" class="text-white me-3"><i data-feather="github"></i></a>
+                    <a href="https://www.linkedin.com/in/sushantrana05/" class="text-white me-3"><i data-feather="linkedin"></i></a>
+                    <a href="mailto:sushantrana2005@gmail.com" class="text-white"><i data-feather="mail"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out'
+        });
+        feather.replace();
+        
+        // Initialize charts when modals are shown
+        document.addEventListener('DOMContentLoaded', function() {
+            const project1Modal = document.getElementById('project1Modal');
+            const project2Modal = document.getElementById('project2Modal');
+            
+            project1Modal.addEventListener('shown.bs.modal', function() {
+                const ctx1 = document.getElementById('accuracyChart1').getContext('2d');
+                new Chart(ctx1, {
+                    type: 'bar',
+                    data: {
+                        labels: ['Baseline', 'With Embeddings', 'Final Model'],
+                        datasets: [{
+                            label: 'Accuracy (%)',
+                            data: [72, 85, 89],
+                            backgroundColor: [
+                                'rgba(255, 99, 132, 0.7)',
+                                'rgba(54, 162, 235, 0.7)',
+                                'rgba(75, 192, 192, 0.7)'
+                            ],
+                            borderColor: [
+                                'rgba(255, 99, 132, 1)',
+                                'rgba(54, 162, 235, 1)',
+                                'rgba(75, 192, 192, 1)'
+                            ],
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        scales: {
+                            y: {
+                                beginAtZero: true,
+                                max: 100
+                            }
+                        }
+                    }
+                });
+            });
+            
+            project2Modal.addEventListener('shown.bs.modal', function() {
+                const ctx2 = document.getElementById('accuracyChart2').getContext('2d');
+                new Chart(ctx2, {
+                    type: 'line',
+                    data: {
+                        labels: ['Epoch 1', 'Epoch 5', 'Epoch 10', 'Epoch 15', 'Epoch 20'],
+                        datasets: [{
+                            label: 'Training Accuracy',
+                            data: [65, 82, 88, 91, 94],
+                            borderColor: 'rgba(75, 192, 192, 1)',
+                            backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                            tension: 0.1,
+                            fill: true
+                        },
+                        {
+                            label: 'Validation Accuracy',
+                            data: [60, 78, 85, 88, 90],
+                            borderColor: 'rgba(153, 102, 255, 1)',
+                            backgroundColor: 'rgba(153, 102, 255, 0.2)',
+                            tension: 0.1,
+                            fill: true
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        scales: {
+                            y: {
+                                beginAtZero: true,
+                                max: 100
+                            }
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

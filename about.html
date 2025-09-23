@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About | Sushant Rana</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+<style>
+:root {
+    --primary: #0d6efd;
+    --secondary: #6c757d;
+    --accent: #ffc107;
+}
+body {
+    font-family: 'Poppins', sans-serif;
+}
+html { scroll-behavior: smooth; }
+.navbar { backdrop-filter: blur(10px); background: rgba(255,255,255,0.9); }
+
+/* Profile Image */
+.profile-img {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    border: 5px solid white;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+.profile-img:hover {
+    transform: scale(1.05) translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+}
+
+/* Skill Bars */
+.skill-bar { height: 10px; background-color: #e9ecef; border-radius: 5px; margin-bottom: 15px; }
+.skill-progress {
+    height: 100%;
+    border-radius: 5px;
+    width: 0;
+    background: linear-gradient(90deg, #0d6efd, #00cfff);
+    transition: width 2s ease-in-out;
+}
+
+/* Timeline */
+.timeline { position: relative; padding-left: 50px; }
+.timeline::before { content: ''; position: absolute; left: 20px; top: 0; bottom: 0; width: 2px; background: var(--primary); }
+.timeline-item {
+    position: relative; margin-bottom: 30px; padding: 15px 20px;
+    background: #fff; border-radius: 8px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.timeline-item:hover { transform: translateY(-5px); box-shadow: 0 12px 25px rgba(0,0,0,0.1); }
+.timeline-item::before {
+    content: ''; position: absolute; left: -40px; top: 5px; width: 20px; height: 20px;
+    border-radius: 50%; background: var(--accent); border: 3px solid var(--primary);
+}
+section { padding-top: 80px; }
+</style>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-light fixed-top py-3">
+<div class="container">
+<a class="navbar-brand fw-bold" href="index.html">Sushant Rana</a>
+<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse" id="navbarNav">
+<ul class="navbar-nav ms-auto">
+<li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+<li class="nav-item"><a class="nav-link active" href="about.html">About</a></li>
+<li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
+<li class="nav-item"><a class="nav-link" href="resume.html">Resume</a></li>
+<li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+</ul>
+</div>
+</div>
+</nav>
+
+<!-- About Section -->
+<section class="py-5 mt-5">
+  <div class="container py-5">
+    <div class="row align-items-center">
+      <!-- Profile Image -->
+      <div class="col-lg-5 text-center mb-5 mb-lg-0" data-aos="fade-right">
+        <img src="images/myphoto.jpg" alt="Sushant Rana" class="profile-img rounded-circle">
+      </div>
+
+      <!-- About Text -->
+      <div class="col-lg-7" data-aos="fade-left">
+        <h2 class="fw-bold mb-4">Hi, I'm <span class="text-primary">Sushant Rana</span></h2>
+        <p class="lead">A 4th-year Bachelor’s student in Computer Science, passionate about Artificial Intelligence and Machine Learning.</p>
+
+        <p>I started my bachelor’s in 2022, and over the past years, I’ve immersed myself in coding, ML projects, and AI challenges. I qualified in <strong>IILM Hackaverse</strong>, which gave me practical experience in solving real-world problems.</p>
+
+        <p>I enjoy building machine learning models, exploring computer vision tasks, and experimenting with NLP. Python, TensorFlow, and PyTorch are my primary tools, and I’m constantly learning to improve my skills.</p>
+
+        <p>Beyond coding, I focus on personal growth: participating in hackathons, learning new AI techniques, and reading research papers. My goal is to create intelligent solutions that combine creativity with technology to make an impact.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Skills Section -->
+<section class="py-5 bg-light">
+  <div class="container py-5">
+    <div class="row mb-5 text-center">
+      <div class="col-12">
+        <h2 class="fw-bold">Skills & Tools</h2>
+        <p class="text-muted">The technologies and tools I use regularly</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6" data-aos="fade-up">
+        <div class="mb-4">
+          <div class="d-flex justify-content-between mb-2"><span>Python</span><span>95%</span></div>
+          <div class="skill-bar"><div class="skill-progress" data-width="95"></div></div>
+        </div>
+        <div class="mb-4">
+          <div class="d-flex justify-content-between mb-2"><span>TensorFlow / PyTorch</span><span>90%</span></div>
+          <div class="skill-bar"><div class="skill-progress" data-width="90"></div></div>
+        </div>
+        <div class="mb-4">
+          <div class="d-flex justify-content-between mb-2"><span>Data Analysis & Visualization</span><span>85%</span></div>
+          <div class="skill-bar"><div class="skill-progress" data-width="85"></div></div>
+        </div>
+      </div>
+      <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
+        <div class="mb-4">
+          <div class="d-flex justify-content-between mb-2"><span>Machine Learning</span><span>92%</span></div>
+          <div class="skill-bar"><div class="skill-progress" data-width="92"></div></div>
+        </div>
+        <div class="mb-4">
+          <div class="d-flex justify-content-between mb-2"><span>Deep Learning</span><span>88%</span></div>
+          <div class="skill-bar"><div class="skill-progress" data-width="88"></div></div>
+        </div>
+        <div class="mb-4">
+          <div class="d-flex justify-content-between mb-2"><span>Natural Language Processing</span><span>83%</span></div>
+          <div class="skill-bar"><div class="skill-progress" data-width="83"></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="py-5">
+  <div class="container py-5">
+    <div class="row mb-5 text-center">
+      <div class="col-12">
+        <h2 class="fw-bold">My Journey</h2>
+        <p class="text-muted">Key milestones so far</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-8 mx-auto">
+        <div class="timeline">
+          <div class="timeline-item" data-aos="fade-up">
+            <h5>Bachelor's in Computer Science</h5>
+            <p class="text-muted mb-1">2022 - Present | 4th Year</p>
+            <p>Currently pursuing my degree with a focus on Artificial Intelligence, Machine Learning, and Computer Vision. Working on projects and participating in AI challenges.</p>
+          </div>
+          <div class="timeline-item" data-aos="fade-up">
+            <h5>IILM Hackaverse Qualifier</h5>
+            <p class="text-muted mb-1">2023</p>
+            <p>Successfully qualified in IILM Hackaverse, demonstrating problem-solving and coding skills in competitive AI challenges.</p>
+          </div>
+          <div class="timeline-item" data-aos="fade-up">
+            <h5>Personal ML Projects</h5>
+            <p class="text-muted mb-1">2022</p>
+            <p>Developed computer vision and NLP models using Python, TensorFlow, and PyTorch to solve real-world problems and enhance skills.</p>
+          </div>
+          <div class="timeline-item" data-aos="fade-up">
+            <h5>Hackathons & Competitions</h5>
+            <p class="text-muted mb-1">2023 </p>
+            <p>Participated in coding challenges and hackathons to test skills, learn collaboration, and gain practical AI experience.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Timeline Section -->
+<section class="py-5">
+  <div class="container py-5">
+    <div class="row mb-5 text-center">
+      <div class="col-12">
+        <h2 class="fw-bold">My Journey</h2>
+        <p class="text-muted">From curious beginner to aspiring AI & ML engineer</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-8 mx-auto">
+        <div class="timeline">
+          
+          <div class="timeline-item" data-aos="fade-up">
+            <h5>Curiosity Sparks: Cybersecurity</h5>
+            <p class="text-muted mb-1">2022 - 1st Semester</p>
+            <p>I started my tech journey exploring the fascinating world of cybersecurity. Understanding how systems work, and how to secure them, sparked my passion for technology and problem-solving.</p>
+          </div>
+          
+          <div class="timeline-item" data-aos="fade-up">
+            <h5>Exploring the Digital Universe</h5>
+            <p class="text-muted mb-1">2nd - 3rd Semester</p>
+            <p>Eager to learn more, I ventured into programming, data science, and AI basics. I experimented with projects and challenges, discovering my love for building intelligent systems that can think and learn.</p>
+          </div>
+          
+          <div class="timeline-item" data-aos="fade-up">
+            <h5>Hackaverse Revelation</h5>
+            <p class="text-muted mb-1">End of 3rd Semester</p>
+            <p>Participating in <strong>IILM Hackaverse</strong> was a turning point. Competing with brilliant minds and solving real-world problems helped me realize my true calling: AI and machine learning. This was the moment I chose my specialization.</p>
+          </div>
+          
+          <div class="timeline-item" data-aos="fade-up">
+            <h5>On the Path to AI Excellence</h5>
+            <p class="text-muted mb-1">4th Semester - Present</p>
+            <p>Now, I am fully immersed in the AI/ML world, working on computer vision, NLP, and predictive modeling projects. Every day I sharpen my skills, aiming to innovate, create intelligent solutions, and become a leading AI engineer.</p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Footer -->
+<footer class="bg-dark text-white py-4">
+<div class="container">
+<div class="row">
+<div class="col-md-6">
+<p class="mb-0">© 2025 Sushant Rana. All rights reserved.</p>
+</div>
+<div class="col-md-6 text-md-end">
+<a href="https://github.com/sushanrana2005" class="text-white me-3"><i data-feather="github"></i></a>
+<a href="https://www.linkedin.com/in/sushantrana05/" class="text-white me-3"><i data-feather="linkedin"></i></a>
+<a href="mailto:sushantrana2005@gmail.com" class="text-white"><i data-feather="mail"></i></a>
+</div>
+</div>
+</div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+AOS.init({duration:800, easing:'ease-in-out'});
+feather.replace();
+
+// Animate skill bars on scroll
+document.addEventListener('DOMContentLoaded', function() {
+    const skillBars = document.querySelectorAll('.skill-progress');
+    const animateSkills = () => {
+        skillBars.forEach(bar => {
+            const width = bar.getAttribute('data-width');
+            bar.style.width = width + '%';
+        });
+    };
+    const observer = new IntersectionObserver((entries)=>{
+        entries.forEach(entry=>{
+            if(entry.isIntersecting){
+                animateSkills();
+                observer.unobserve(entry.target);
+            }
+        });
+    }, {threshold: 0.5});
+    document.querySelectorAll('.skill-bar').forEach(bar => observer.observe(bar));
+});
+</script>
+</body>
+</html>

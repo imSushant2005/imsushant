@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume | Sushant Rana</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <style>
+        :root {
+            --primary: #0d6efd;
+            --secondary: #6c757d;
+            --accent: #ffc107;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        .navbar {
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.9);
+        }
+        .resume-header {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        }
+        .profile-img {
+            width: 180px;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 50%; /* Perfect circle */
+            border: 5px solid #8395b0; /* Blue border */
+            box-shadow: 0 10px 30px rgba(13, 110, 253, 0.4); /* soft blue shadow */
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .profile-img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 40px rgba(13, 110, 253, 0.6);
+        }
+
+        .timeline {
+            position: relative;
+            padding-left: 50px;
+        }
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 20px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--primary);
+        }
+        .timeline-item {
+            position: relative;
+            margin-bottom: 30px;
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -40px;
+            top: 5px;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: var(--accent);
+            border: 3px solid var(--primary);
+        }
+        .cert-badge {
+            background-color: #f8f9fa;
+            border: 1px solid #dee2e6;
+            margin-right: 5px;
+            margin-bottom: 5px;
+        }
+        .download-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 99;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">Sushant Rana</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="resume.html">Resume</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Resume Header -->
+    <section class="resume-header py-5 mt-5">
+        <div class="container py-5">
+            <div class="row align-items-center">
+                <div class="col-lg-8 text-center text-lg-start" data-aos="fade-right">
+                    <h1 class="display-5 fw-bold mb-3">Sushant Rana</h1>
+                    <p class="lead mb-4">Aspiring AI & Machine Learning Engineer</p>
+                    <div class="d-flex flex-wrap justify-content-center justify-content-lg-start gap-3">
+                        <span><i data-feather="mail" class="me-2"></i> sushanrana2005@gmail.com</span>
+                        <span><i data-feather="phone" class="me-2"></i> +91 6395487715</span>
+                        <span><i data-feather="map-pin" class="me-2"></i> Uttarakhand, India</span>
+                    </div>
+                </div>
+                <div class="col-lg-4 text-center mt-4 mt-lg-0" data-aos="fade-left">
+                    <img src="images/myphoto.jpg" alt="Sushant Rana" class="profile-img shadow">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resume Content -->
+    <section class="py-5">
+        <div class="container py-5">
+            <div class="row">
+                <div class="col-lg-8">
+                    <!-- Experience / Achievements -->
+                    <div class="mb-5" data-aos="fade-up">
+                        <h2 class="fw-bold mb-4"><i data-feather="briefcase" class="me-2"></i> Achievements & Projects</h2>
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <h5>ILlm Hackaverse Qualifier</h5>
+                                <p class="text-muted mb-1">Hackathon | 2025</p>
+                                <ul>
+                                    <li>Qualified ILlm Hackaverse showcasing strong problem-solving skills.</li>
+                                    <li>Worked on AI/ML mini-projects during hackathon.</li>
+                                </ul>
+                            </div>
+                            <div class="timeline-item">
+                                <h5>Mini ML Projects</h5>
+                                <p class="text-muted mb-1">Personal Projects | 2022 - Present</p>
+                                <ul>
+                                    <li>Built image classification models using CNN.</li>
+                                    <li>Developed sentiment analysis model with Python and NLP libraries.</li>
+                                    <li>Created small data visualizations and ML dashboards.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Education -->
+                    <div class="mb-5" data-aos="fade-up">
+                        <h2 class="fw-bold mb-4"><i data-feather="book" class="me-2"></i> Education</h2>
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <h5>Bachelor of Technology (B.Tech) in Computer Science</h5>
+                                <p class="text-muted mb-1">Started 2022 | Currently in 4th Year</p>
+                                <p>Focus: Artificial Intelligence & Machine Learning</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <!-- Skills -->
+                    <div class="card shadow-sm mb-4" data-aos="fade-left">
+                        <div class="card-body">
+                            <h3 class="fw-bold mb-3"><i data-feather="award" class="me-2"></i> Skills</h3>
+                            <h5 class="mt-4">Technical</h5>
+                            <ul class="list-unstyled">
+                                <li class="mb-2">Python (TensorFlow, PyTorch)</li>
+                                <li class="mb-2">Machine Learning & Deep Learning</li>
+                                <li class="mb-2">Natural Language Processing</li>
+                                <li class="mb-2">Computer Vision</li>
+                                <li class="mb-2">Data Analysis & Visualization</li>
+                            </ul>
+                            <h5 class="mt-4">Tools</h5>
+                            <ul class="list-unstyled">
+                                <li class="mb-2">Git & GitHub</li>
+                                <li class="mb-2">Jupyter Notebook / Colab</li>
+                                <li class="mb-2">Basic SQL / NoSQL</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Certifications -->
+                    <div class="card shadow-sm mb-4" data-aos="fade-left" data-aos-delay="100">
+                        <div class="card-body">
+                            <h3 class="fw-bold mb-3"><i data-feather="file-text" class="me-2"></i> Certifications</h3>
+                            <div class="d-flex flex-wrap">
+                                <span class="badge cert-badge p-2">TensorFlow Developer</span>
+                                <span class="badge cert-badge p-2">AWS Machine Learning</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <p class="mb-0">© 2025 Sushant Rana. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <a href="https://github.com/sushanrana2005" class="text-white me-3"><i data-feather="github"></i></a>
+                    <a href="https://www.linkedin.com/in/sushantrana05/" class="text-white me-3"><i data-feather="linkedin"></i></a>
+                    <a href="mailto:sushanrana2005@gmail.com" class="text-white"><i data-feather="mail"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 800, easing: 'ease-in-out' });
+        feather.replace();
+    </script>
+</body>
+</html>
