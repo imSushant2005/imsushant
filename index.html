@@ -1,0 +1,1315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <base target="_self">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neural Mind | AI Engineer Portfolio</title>
+    <meta name="description" content="Immersive AI Engineer Portfolio - Where Innovation Meets Intelligence">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;600;700&family=Inter:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'mono': ['JetBrains Mono', 'monospace'],
+                        'sans': ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        'cyber-blue': '#00d4ff',
+                        'cyber-purple': '#8b5cf6',
+                        'cyber-pink': '#f43f5e',
+                        'cyber-green': '#10b981',
+                        'dark-bg': '#0a0a0f',
+                        'dark-card': '#1a1a2e',
+                        'neon-glow': '#00ffff',
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'glow': 'glow 2s ease-in-out infinite alternate',
+                        'matrix': 'matrix 20s linear infinite',
+                        'typing': 'typing 3.5s steps(40, end), blink-caret .75s step-end infinite',
+                        'fadeInUp': 'fadeInUp 0.6s ease-out',
+                        'slideInLeft': 'slideInLeft 0.8s ease-out',
+                        'slideInRight': 'slideInRight 0.8s ease-out',
+                        'pulse-neon': 'pulse-neon 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'rotate-3d': 'rotate-3d 10s linear infinite',
+                        'neural-pulse': 'neural-pulse 3s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        },
+                        glow: {
+                            '0%': { boxShadow: '0 0 20px rgba(0, 212, 255, 0.5)' },
+                            '100%': { boxShadow: '0 0 40px rgba(0, 212, 255, 0.8), 0 0 60px rgba(139, 92, 246, 0.3)' },
+                        },
+                        matrix: {
+                            '0%': { transform: 'translateY(-100%)' },
+                            '100%': { transform: 'translateY(100vh)' },
+                        },
+                        typing: {
+                            'from': { width: '0' },
+                            'to': { width: '100%' }
+                        },
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(30px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        slideInLeft: {
+                            '0%': { opacity: '0', transform: 'translateX(-50px)' },
+                            '100%': { opacity: '1', transform: 'translateX(0)' },
+                        },
+                        slideInRight: {
+                            '0%': { opacity: '0', transform: 'translateX(50px)' },
+                            '100%': { opacity: '1', transform: 'translateX(0)' },
+                        },
+                        'pulse-neon': {
+                            '0%, 100%': { 
+                                boxShadow: '0 0 20px rgba(0, 255, 255, 0.5)',
+                                borderColor: 'rgba(0, 255, 255, 0.5)'
+                            },
+                            '50%': { 
+                                boxShadow: '0 0 40px rgba(0, 255, 255, 0.8), 0 0 60px rgba(139, 92, 246, 0.4)',
+                                borderColor: 'rgba(0, 255, 255, 0.8)'
+                            },
+                        },
+                        'rotate-3d': {
+                            '0%': { transform: 'rotateY(0deg) rotateX(0deg)' },
+                            '25%': { transform: 'rotateY(90deg) rotateX(10deg)' },
+                            '50%': { transform: 'rotateY(180deg) rotateX(0deg)' },
+                            '75%': { transform: 'rotateY(270deg) rotateX(-10deg)' },
+                            '100%': { transform: 'rotateY(360deg) rotateX(0deg)' },
+                        },
+                        'neural-pulse': {
+                            '0%, 100%': { opacity: 0.3, transform: 'scale(1)' },
+                            '50%': { opacity: 1, transform: 'scale(1.05)' },
+                        }
+                    },
+                    backgroundImage: {
+                        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+                        'neural-grid': 'linear-gradient(rgba(0,255,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(0,255,255,0.03) 1px, transparent 1px)',
+                    },
+                    backgroundSize: {
+                        'grid': '50px 50px',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .neural-bg {
+            background: linear-gradient(135deg, #0a0a0f 0%, #1a1a2e 50%, #16213e 100%);
+            background-size: 400% 400%;
+            animation: gradient 15s ease infinite;
+        }
+        
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        .glass-morphism {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .neural-grid-bg {
+            background-image: 
+                linear-gradient(rgba(0,255,255,0.1) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0,255,255,0.1) 1px, transparent 1px);
+            background-size: 50px 50px;
+        }
+        
+        .typing-cursor::after {
+            content: '|';
+            animation: blink 1s infinite;
+        }
+        
+        @keyframes blink {
+            0%, 50% { opacity: 1; }
+            51%, 100% { opacity: 0; }
+        }
+        
+        .skill-orbit {
+            transform-style: preserve-3d;
+            animation: rotate-3d 20s linear infinite;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-10px) rotateX(5deg);
+            transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        
+        .neural-node {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: linear-gradient(45deg, #00d4ff, #8b5cf6);
+            border-radius: 50%;
+            animation: neural-pulse 3s ease-in-out infinite;
+        }
+        
+        .neural-connection {
+            position: absolute;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(0,212,255,0.3), transparent);
+            animation: neural-pulse 2s ease-in-out infinite;
+        }
+        
+        .hologram-effect {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hologram-effect::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(0,255,255,0.3), transparent);
+            animation: scan 3s linear infinite;
+        }
+        
+        @keyframes scan {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+        
+        .matrix-code {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            opacity: 0.1;
+            z-index: -1;
+        }
+        
+        .code-rain {
+            position: absolute;
+            color: #00ff00;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 12px;
+            animation: matrix 20s linear infinite;
+        }
+    </style>
+</head>
+<body class="neural-bg text-white font-sans overflow-x-hidden">
+    <!-- Matrix Background Effect -->
+    <div class="matrix-code" id="matrixBg"></div>
+    
+    <!-- Neural Network Background -->
+    <div class="fixed inset-0 pointer-events-none z-0" id="neuralNetwork"></div>
+    
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 top-0">
+        <div class="glass-morphism">
+            <div class="container mx-auto px-6 py-4">
+                <div class="flex justify-between items-center">
+                    <div class="text-2xl font-bold font-mono">
+                        <span class="text-cyber-blue">&lt;</span>
+                        <span class="text-white">NEURAL</span>
+                        <span class="text-cyber-purple">MIND</span>
+                        <span class="text-cyber-blue">/&gt;</span>
+                    </div>
+                    <div class="hidden md:flex space-x-8">
+                        <a href="#home" class="nav-link text-white hover:text-cyber-blue transition-all duration-300 relative group">
+                            <span>Home</span>
+                            <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-cyber-blue transition-all duration-300 group-hover:w-full"></span>
+                        </a>
+                        <a href="#about" class="nav-link text-white hover:text-cyber-blue transition-all duration-300 relative group">
+                            <span>About</span>
+                            <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-cyber-blue transition-all duration-300 group-hover:w-full"></span>
+                        </a>
+                        <a href="#skills" class="nav-link text-white hover:text-cyber-blue transition-all duration-300 relative group">
+                            <span>Neural Skills</span>
+                            <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-cyber-blue transition-all duration-300 group-hover:w-full"></span>
+                        </a>
+                        <a href="#projects" class="nav-link text-white hover:text-cyber-blue transition-all duration-300 relative group">
+                            <span>AI Creations</span>
+                            <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-cyber-blue transition-all duration-300 group-hover:w-full"></span>
+                        </a>
+                        <a href="#contact" class="nav-link text-white hover:text-cyber-blue transition-all duration-300 relative group">
+                            <span>Connect</span>
+                            <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-cyber-blue transition-all duration-300 group-hover:w-full"></span>
+                        </a>
+                    </div>
+                    <div class="md:hidden">
+                        <button class="mobile-menu-btn text-cyber-blue text-2xl">
+                            <i class="fas fa-bars"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center pt-20 relative">
+        <div class="container mx-auto px-6 py-20 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="space-y-8 animate-slideInLeft">
+                    <div class="space-y-4">
+                        <div class="text-cyber-blue font-mono text-lg">
+                            <span class="typing-cursor" id="typewriter">Initializing Neural Interface...</span>
+                        </div>
+                                                <!-- In <title> and branding -->
+                        <title>Sushant Rana | AI Engineer Portfolio</title>
+                        <!-- ...existing code... -->
+                        <div class="text-2xl font-bold font-mono">
+                            <span class="text-cyber-blue">&lt;</span>
+                            <span class="text-white">SUSHANT</span>
+                            <span class="text-cyber-purple">RANA</span>
+                            <span class="text-cyber-blue">/&gt;</span>
+                        </div>
+                        <!-- ...existing code... -->
+                        <h1 class="text-5xl md:text-7xl font-black leading-tight">
+                            <span class="text-white">AI</span>
+                            <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyber-blue to-cyber-purple"> ARCHITECT</span>
+                        </h1>
+                        <p class="text-xl text-gray-300 max-w-xl">
+                            Crafting the future through <span class="text-cyber-green font-semibold">intelligent algorithms</span> and 
+                            <span class="text-cyber-pink font-semibold">neural architectures</span> that reshape reality.
+                        </p>
+                    </div>
+                    
+                    <div class="flex flex-wrap gap-4">
+                        <button class="group relative bg-gradient-to-r from-cyber-blue to-cyber-purple px-8 py-4 rounded-lg overflow-hidden font-semibold transition-all duration-300 hover:scale-105">
+                            <span class="relative z-10">Explore Neural Networks</span>
+                            <div class="absolute inset-0 bg-gradient-to-r from-cyber-purple to-cyber-blue opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        </button>
+                        <button class="border-2 border-cyber-blue text-cyber-blue px-8 py-4 rounded-lg hover:bg-cyber-blue hover:text-dark-bg transition-all duration-300 font-semibold animate-pulse-neon">
+                            Download Neural Profile
+                        </button>
+                    </div>
+                    
+                    <!-- AI Stats -->
+                    <div class="grid grid-cols-3 gap-6 pt-8">
+                        <div class="text-center glass-morphism p-4 rounded-lg">
+                            <div class="text-3xl font-bold text-cyber-blue" data-count="150">0</div>
+                            <div class="text-sm text-gray-400">AI Models</div>
+                        </div>
+                        <div class="text-center glass-morphism p-4 rounded-lg">
+                            <div class="text-3xl font-bold text-cyber-green" data-count="99.7">0</div>
+                            <div class="text-sm text-gray-400">Accuracy %</div>
+                        </div>
+                        <div class="text-center glass-morphism p-4 rounded-lg">
+                            <div class="text-3xl font-bold text-cyber-purple" data-count="24">0</div>
+                            <div class="text-sm text-gray-400">TB Processed</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="relative animate-slideInRight">
+                    <div class="relative group">
+                        <!-- 3D Hologram Effect -->
+                        <div class="absolute inset-0 bg-gradient-to-r from-cyber-blue to-cyber-purple rounded-full animate-glow"></div>
+                        <div class="relative m-2 hologram-effect">
+                            <img src="https://picsum.photos/500/500?random=1" alt="AI Neural Interface" class="rounded-full shadow-2xl relative z-10 group-hover:scale-105 transition-all duration-500">
+                            <!-- Neural Overlay -->
+                            <div class="absolute inset-0 rounded-full border-2 border-cyber-blue animate-pulse-neon"></div>
+                        </div>
+                        
+                        <!-- Floating Elements -->
+                        <div class="absolute -top-8 -right-8 w-16 h-16 glass-morphism rounded-lg flex items-center justify-center animate-float">
+                            <i class="fas fa-brain text-cyber-purple text-2xl"></i>
+                        </div>
+                        <div class="absolute -bottom-8 -left-8 w-16 h-16 glass-morphism rounded-lg flex items-center justify-center animate-float" style="animation-delay: 1s;">
+                            <i class="fas fa-robot text-cyber-green text-2xl"></i>
+                        </div>
+                        <div class="absolute top-1/2 -right-12 w-12 h-12 glass-morphism rounded-lg flex items-center justify-center animate-float" style="animation-delay: 2s;">
+                            <i class="fas fa-microchip text-cyber-blue text-xl"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 relative">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16 animate-fadeInUp">
+                <h2 class="text-4xl md:text-6xl font-black mb-6">
+                    <span class="text-white">NEURAL</span> 
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyber-pink to-cyber-purple">ARCHITECT</span>
+                </h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-cyber-blue to-cyber-purple mx-auto mb-8"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div class="space-y-8 animate-slideInLeft">
+                    <div class="glass-morphism p-8 rounded-2xl">
+                        <h3 class="text-2xl font-bold text-cyber-blue mb-6">
+                            <i class="fas fa-brain mr-3"></i>
+                            Consciousness in Code
+                        </h3>
+                        <p class="text-lg text-gray-300 mb-6">
+                            I'm not just building AI systems—I'm architecting digital consciousness. With 8+ years of experience 
+                            in the neural frontier, I specialize in creating AI that doesn't just compute, but comprehends.
+                        </p>
+                        <p class="text-lg text-gray-300">
+                            My work spans quantum machine learning, generative AI architectures, and neural-symbolic reasoning. 
+                            I believe in AI that's not just powerful, but purposeful—systems that augment human potential rather than replace it.
+                        </p>
+                    </div>
+                <!-- ...existing code for AI Capabilities Matrix... -->
+                    
+                    <!-- AI Capabilities Matrix -->
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="glass-morphism p-6 rounded-xl text-center group hover:bg-gradient-to-br hover:from-cyber-blue/20 hover:to-transparent transition-all duration-300">
+                            <i class="fas fa-eye text-3xl text-cyber-blue mb-3 group-hover:scale-110 transition-transform"></i>
+                            <h4 class="font-semibold text-white mb-2">Machine Learning</h4>
+                            <p class="text-sm text-gray-400">Model building & optimization</p>
+                        </div>
+                        <div class="glass-morphism p-6 rounded-xl text-center group hover:bg-gradient-to-br hover:from-cyber-purple/20 hover:to-transparent transition-all duration-300">
+                            <i class="fas fa-language text-3xl text-cyber-purple mb-3 group-hover:scale-110 transition-transform"></i>
+                            <h4 class="font-semibold text-white mb-2">Generative AI</h4>
+                            <p class="text-sm text-gray-400">Creating content & ideas</p>
+                        </div>
+                        <div class="glass-morphism p-6 rounded-xl text-center group hover:bg-gradient-to-br hover:from-cyber-green/20 hover:to-transparent transition-all duration-300">
+                            <i class="fas fa-chart-line text-3xl text-cyber-green mb-3 group-hover:scale-110 transition-transform"></i>
+                            <h4 class="font-semibold text-white mb-2">Neural Networks</h4>
+                            <p class="text-sm text-gray-400">Deep learning architectures</p>
+                        </div>
+                        <div class="glass-morphism p-6 rounded-xl text-center group hover:bg-gradient-to-br hover:from-cyber-pink/20 hover:to-transparent transition-all duration-300">
+                            <i class="fas fa-network-wired text-3xl text-cyber-pink mb-3 group-hover:scale-110 transition-transform"></i>
+                            <h4 class="font-semibold text-white mb-2">Responsible AI</h4>
+                            <p class="text-sm text-gray-400">Building purposeful systems</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="relative animate-slideInRight">
+                    <!-- 3D Code Visualization -->
+                    <div class="relative h-96 glass-morphism rounded-2xl p-8 overflow-hidden">
+                        <div class="absolute inset-0 neural-grid-bg opacity-20"></div>
+                        
+                        <!-- Animated Code Blocks -->
+                        <div class="space-y-4 font-mono text-sm relative z-10">
+                            <div class="text-cyber-blue animate-pulse">
+                                <span class="text-cyber-purple">class</span> <span class="text-cyber-green">NeuralArchitect</span><span class="text-white">:</span>
+                            </div>
+                            <div class="ml-4 space-y-2">
+                                <div class="text-gray-400 animate-pulse" style="animation-delay: 0.5s;">
+                                    <span class="text-cyber-purple">def</span> <span class="text-cyber-blue">create_intelligence</span><span class="text-white">(</span><span class="text-cyber-green">self</span><span class="text-white">):</span>
+                                </div>
+                                <div class="ml-8 space-y-1">
+                                    <div class="text-gray-300 animate-pulse" style="animation-delay: 1s;">
+                                        <span class="text-cyber-pink">neural_net</span> <span class="text-white">=</span> <span class="text-cyber-blue">DeepLearning</span><span class="text-white">()</span>
+                                    </div>
+                                    <div class="text-gray-300 animate-pulse" style="animation-delay: 1.5s;">
+                                        <span class="text-cyber-pink">consciousness</span> <span class="text-white">=</span> <span class="text-cyber-blue">AGI</span><span class="text-white">.emerge()</span>
+                                    </div>
+                                    <div class="text-gray-300 animate-pulse" style="animation-delay: 2s;">
+                                        <span class="text-cyber-purple">return</span> <span class="text-cyber-green">FutureAI</span><span class="text-white">(</span><span class="text-cyber-pink">neural_net</span><span class="text-white">)</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Floating Neural Nodes -->
+                        <div class="absolute top-4 right-4 w-3 h-3 bg-cyber-blue rounded-full animate-ping"></div>
+                        <div class="absolute bottom-8 left-8 w-2 h-2 bg-cyber-purple rounded-full animate-ping" style="animation-delay: 1s;"></div>
+                        <div class="absolute top-1/3 right-1/3 w-4 h-4 bg-cyber-green rounded-full animate-ping" style="animation-delay: 2s;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 relative">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16 animate-fadeInUp">
+                <h2 class="text-4xl md:text-6xl font-black mb-6">
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyber-blue to-cyber-purple">NEURAL</span> 
+                    <span class="text-white">TOOLKIT</span>
+                </h2>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                    Advanced AI technologies and frameworks powering next-generation intelligent systems
+                </p>
+            </div>
+
+            <!-- AI Framework Constellation -->
+            <div class="relative h-96 mb-16">
+                <div class="skill-orbit absolute inset-0 flex items-center justify-center">
+                    <!-- Core AI Hub -->
+                    <div class="relative">
+                        <div class="w-32 h-32 glass-morphism rounded-full flex items-center justify-center border-2 border-cyber-blue animate-glow">
+                            <i class="fas fa-brain text-4xl text-cyber-blue"></i>
+                        </div>
+                        
+                        <!-- Orbiting Skills -->
+                        <div class="absolute -inset-32 animate-spin" style="animation-duration: 20s;">
+                            <div class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-8">
+                                <div class="skill-node w-16 h-16 glass-morphism rounded-lg flex items-center justify-center group hover:scale-110 transition-all">
+                                    <i class="fab fa-python text-2xl text-cyber-green"></i>
+                                </div>
+                            </div>
+                            <div class="absolute top-1/2 right-0 transform translate-x-8 -translate-y-1/2">
+                                <div class="skill-node w-16 h-16 glass-morphism rounded-lg flex items-center justify-center group hover:scale-110 transition-all">
+                                    <i class="fas fa-fire text-2xl text-cyber-pink"></i>
+                                </div>
+                            </div>
+                            <div class="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-8">
+                                <div class="skill-node w-16 h-16 glass-morphism rounded-lg flex items-center justify-center group hover:scale-110 transition-all">
+                                    <i class="fas fa-cube text-2xl text-cyber-purple"></i>
+                                </div>
+                            </div>
+                            <div class="absolute top-1/2 left-0 transform -translate-x-8 -translate-y-1/2">
+                                <div class="skill-node w-16 h-16 glass-morphism rounded-lg flex items-center justify-center group hover:scale-110 transition-all">
+                                    <i class="fas fa-chart-network text-2xl text-cyber-blue"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Skill Categories -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Deep Learning -->
+                <div class="glass-morphism p-8 rounded-2xl group hover:bg-gradient-to-br hover:from-cyber-blue/10 hover:to-transparent transition-all duration-300">
+                    <div class="text-center mb-6">
+                        <i class="fas fa-brain text-4xl text-cyber-blue mb-4 group-hover:scale-110 transition-transform"></i>
+                        <h3 class="text-2xl font-bold text-white mb-2">Deep Learning</h3>
+                        <p class="text-gray-400">Neural network architectures & optimization</p>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="skill-bar">
+                            <div class="flex justify-between mb-2">
+                                <span class="text-sm text-gray-300">Transformers</span>
+                                <span class="text-sm text-cyber-blue">88%</span>
+                            </div>
+                            <div class="w-full bg-gray-700 rounded-full h-2">
+                                <div class="bg-gradient-to-r from-cyber-green to-cyber-blue h-2 rounded-full animate-pulse" style="width: 88%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Computer Vision -->
+                <div class="glass-morphism p-8 rounded-2xl group hover:bg-gradient-to-br hover:from-cyber-purple/10 hover:to-transparent transition-all duration-300">
+                    <div class="text-center mb-6">
+                        <i class="fas fa-eye text-4xl text-cyber-purple mb-4 group-hover:scale-110 transition-transform"></i>
+                        <h3 class="text-2xl font-bold text-white mb-2">Computer Vision</h3>
+                        <p class="text-gray-400">Image processing & neural perception</p>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="skill-bar">
+                            <div class="flex justify-between mb-2">
+                                <span class="text-sm text-gray-300">OpenCV</span>
+                                <span class="text-sm text-cyber-purple">90%</span>
+                            </div>
+                            <div class="w-full bg-gray-700 rounded-full h-2">
+                                <div class="bg-gradient-to-r from-cyber-purple to-cyber-pink h-2 rounded-full animate-pulse" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="flex justify-between mb-2">
+                                <span class="text-sm text-gray-300">YOLO/R-CNN</span>
+                                <span class="text-sm text-cyber-purple">87%</span>
+                            </div>
+                            <div class="w-full bg-gray-700 rounded-full h-2">
+                                <div class="bg-gradient-to-r from-cyber-pink to-cyber-blue h-2 rounded-full animate-pulse" style="width: 87%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="flex justify-between mb-2">
+                                <span class="text-sm text-gray-300">GAN/Diffusion</span>
+                                <span class="text-sm text-cyber-purple">85%</span>
+                            </div>
+                            <div class="w-full bg-gray-700 rounded-full h-2">
+                                <div class="bg-gradient-to-r from-cyber-blue to-cyber-green h-2 rounded-full animate-pulse" style="width: 85%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- NLP & Language Models -->
+                <div class="glass-morphism p-8 rounded-2xl group hover:bg-gradient-to-br hover:from-cyber-green/10 hover:to-transparent transition-all duration-300">
+                    <div class="text-center mb-6">
+                        <i class="fas fa-language text-4xl text-cyber-green mb-4 group-hover:scale-110 transition-transform"></i>
+                        <h3 class="text-2xl font-bold text-white mb-2">NLP & LLMs</h3>
+                        <p class="text-gray-400">Language understanding & generation</p>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="skill-bar">
+                            <div class="flex justify-between mb-2">
+                                <span class="text-sm text-gray-300">BERT/GPT</span>
+                                <span class="text-sm text-cyber-green">93%</span>
+                            </div>
+                            <div class="w-full bg-gray-700 rounded-full h-2">
+                                <div class="bg-gradient-to-r from-cyber-green to-cyber-blue h-2 rounded-full animate-pulse" style="width: 93%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="flex justify-between mb-2">
+                                <span class="text-sm text-gray-300">spaCy/NLTK</span>
+                                <span class="text-sm text-cyber-green">89%</span>
+                            </div>
+                            <div class="w-full bg-gray-700 rounded-full h-2">
+                                <div class="bg-gradient-to-r from-cyber-blue to-cyber-purple h-2 rounded-full animate-pulse" style="width: 89%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="flex justify-between mb-2">
+                                <span class="text-sm text-gray-300">LangChain</span>
+                                <span class="text-sm text-cyber-green">91%</span>
+                            </div>
+                            <div class="w-full bg-gray-700 rounded-full h-2">
+                                <div class="bg-gradient-to-r from-cyber-purple to-cyber-pink h-2 rounded-full animate-pulse" style="width: 91%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 relative">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16 animate-fadeInUp">
+                <h2 class="text-4xl md:text-6xl font-black mb-6">
+                    <span class="text-white">AI</span> 
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyber-pink to-cyber-purple">CREATIONS</span>
+                </h2>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                    Revolutionary AI systems that push the boundaries of what's possible
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project 1: Quantum Neural Network -->
+                <div class="project-card glass-morphism rounded-2xl overflow-hidden group hover:scale-105 transition-all duration-300">
+                    <div class="relative h-48 bg-gradient-to-br from-cyber-blue/20 to-cyber-purple/20 overflow-hidden">
+                        <div class="absolute inset-0 neural-grid-bg opacity-30"></div>
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <i class="fas fa-atom text-6xl text-cyber-blue group-hover:rotate-180 transition-transform duration-700"></i>
+                        </div>
+                        <div class="absolute top-4 right-4">
+                            <span class="bg-cyber-blue/20 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-mono text-cyber-blue">QUANTUM</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-white mb-3 group-hover:text-cyber-blue transition-colors">Quantum Neural Network</h3>
+                        <p class="text-gray-400 mb-4">Revolutionary quantum-enhanced neural architecture achieving 10x speedup in complex optimization problems</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-cyber-blue/20 text-cyber-blue px-3 py-1 rounded-full text-sm font-mono">Qiskit</span>
+                            <span class="bg-cyber-purple/20 text-cyber-purple px-3 py-1 rounded-full text-sm font-mono">PyTorch</span>
+                            <span class="bg-cyber-green/20 text-cyber-green px-3 py-1 rounded-full text-sm font-mono">Quantum</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <a href="#" class="text-cyber-blue hover:text-white font-semibold transition-colors group">
+                                Explore Neural Quantum →
+                                <i class="fas fa-external-link-alt ml-2 group-hover:translate-x-1 transition-transform"></i>
+                            </a>
+                            <div class="flex space-x-2">
+                                <a href="#" class="text-gray-400 hover:text-cyber-blue transition-colors">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                                <a href="#" class="text-gray-400 hover:text-cyber-blue transition-colors">
+                                    <i class="fas fa-play"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2: Multimodal AGI Assistant -->
+                <div class="project-card glass-morphism rounded-2xl overflow-hidden group hover:scale-105 transition-all duration-300">
+                    <div class="relative h-48 bg-gradient-to-br from-cyber-purple/20 to-cyber-pink/20 overflow-hidden">
+                        <div class="absolute inset-0 neural-grid-bg opacity-30"></div>
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <i class="fas fa-robot text-6xl text-cyber-purple group-hover:scale-110 transition-transform duration-500"></i>
+                        </div>
+                        <div class="absolute top-4 right-4">
+                            <span class="bg-cyber-purple/20 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-mono text-cyber-purple">AGI</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-white mb-3 group-hover:text-cyber-purple transition-colors">Multimodal AGI System</h3>
+                        <p class="text-gray-400 mb-4">Advanced general intelligence capable of understanding and generating text, images, audio, and video content</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-cyber-purple/20 text-cyber-purple px-3 py-1 rounded-full text-sm font-mono">GPT-4</span>
+                            <span class="bg-cyber-pink/20 text-cyber-pink px-3 py-1 rounded-full text-sm font-mono">CLIP</span>
+                            <span class="bg-cyber-green/20 text-cyber-green px-3 py-1 rounded-full text-sm font-mono">Whisper</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <a href="#" class="text-cyber-purple hover:text-white font-semibold transition-colors group">
+                                Experience AGI →
+                                <i class="fas fa-external-link-alt ml-2 group-hover:translate-x-1 transition-transform"></i>
+                            </a>
+                            <div class="flex space-x-2">
+                                <a href="#" class="text-gray-400 hover:text-cyber-purple transition-colors">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                                <a href="#" class="text-gray-400 hover:text-cyber-purple transition-colors">
+                                    <i class="fas fa-play"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3: Neural Market Predictor -->
+                <div class="project-card glass-morphism rounded-2xl overflow-hidden group hover:scale-105 transition-all duration-300">
+                    <div class="relative h-48 bg-gradient-to-br from-cyber-green/20 to-cyber-blue/20 overflow-hidden">
+                        <div class="absolute inset-0 neural-grid-bg opacity-30"></div>
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <i class="fas fa-chart-line text-6xl text-cyber-green group-hover:scale-110 transition-transform duration-500"></i>
+                        </div>
+                        <div class="absolute top-4 right-4">
+                            <span class="bg-cyber-green/20 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-mono text-cyber-green">PREDICTIVE</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-white mb-3 group-hover:text-cyber-green transition-colors">Neural Market Prophet</h3>
+                        <p class="text-gray-400 mb-4">AI system using advanced time series analysis and sentiment processing for market trend prediction</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-cyber-green/20 text-cyber-green px-3 py-1 rounded-full text-sm font-mono">LSTM</span>
+                            <span class="bg-cyber-blue/20 text-cyber-blue px-3 py-1 rounded-full text-sm font-mono">Prophet</span>
+                            <span class="bg-cyber-pink/20 text-cyber-pink px-3 py-1 rounded-full text-sm font-mono">Sentiment</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <a href="#" class="text-cyber-green hover:text-white font-semibold transition-colors group">
+                                Predict Future →
+                                <i class="fas fa-external-link-alt ml-2 group-hover:translate-x-1 transition-transform"></i>
+                            </a>
+                            <div class="flex space-x-2">
+                                <a href="#" class="text-gray-400 hover:text-cyber-green transition-colors">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                                <a href="#" class="text-gray-400 hover:text-cyber-green transition-colors">
+                                    <i class="fas fa-play"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 4: Autonomous Code Generator -->
+                <div class="project-card glass-morphism rounded-2xl overflow-hidden group hover:scale-105 transition-all duration-300">
+                    <div class="relative h-48 bg-gradient-to-br from-cyber-pink/20 to-cyber-blue/20 overflow-hidden">
+                        <div class="absolute inset-0 neural-grid-bg opacity-30"></div>
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <i class="fas fa-code text-6xl text-cyber-pink group-hover:rotate-12 transition-transform duration-500"></i>
+                        </div>
+                        <div class="absolute top-4 right-4">
+                            <span class="bg-cyber-pink/20 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-mono text-cyber-pink">AUTONOMOUS</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-white mb-3 group-hover:text-cyber-pink transition-colors">AutoCode AI</h3>
+                        <p class="text-gray-400 mb-4">Self-improving AI that generates, tests, and optimizes code across multiple programming languages</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-cyber-pink/20 text-cyber-pink px-3 py-1 rounded-full text-sm font-mono">CodeT5</span>
+                            <span class="bg-cyber-blue/20 text-cyber-blue px-3 py-1 rounded-full text-sm font-mono">Codex</span>
+                            <span class="bg-cyber-purple/20 text-cyber-purple px-3 py-1 rounded-full text-sm font-mono">AST</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <a href="#" class="text-cyber-pink hover:text-white font-semibold transition-colors group">
+                                Generate Code →
+                                <i class="fas fa-external-link-alt ml-2 group-hover:translate-x-1 transition-transform"></i>
+                            </a>
+                            <div class="flex space-x-2">
+                                <a href="#" class="text-gray-400 hover:text-cyber-pink transition-colors">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                                <a href="#" class="text-gray-400 hover:text-cyber-pink transition-colors">
+                                    <i class="fas fa-play"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 5: Neuro-Symbolic Reasoner -->
+                <div class="project-card glass-morphism rounded-2xl overflow-hidden group hover:scale-105 transition-all duration-300">
+                    <div class="relative h-48 bg-gradient-to-br from-cyber-blue/20 to-cyber-green/20 overflow-hidden">
+                        <div class="absolute inset-0 neural-grid-bg opacity-30"></div>
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <i class="fas fa-brain text-6xl text-cyber-blue group-hover:pulse transition-all duration-500"></i>
+                        </div>
+                        <div class="absolute top-4 right-4">
+                            <span class="bg-cyber-blue/20 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-mono text-cyber-blue">REASONING</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-white mb-3 group-hover:text-cyber-blue transition-colors">SymbolicMind AI</h3>
+                        <p class="text-gray-400 mb-4">Hybrid neuro-symbolic system combining deep learning with logical reasoning for complex problem solving</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-cyber-blue/20 text-cyber-blue px-3 py-1 rounded-full text-sm font-mono">Prolog</span>
+                            <span class="bg-cyber-green/20 text-cyber-green px-3 py-1 rounded-full text-sm font-mono">Graph NN</span>
+                            <span class="bg-cyber-purple/20 text-cyber-purple px-3 py-1 rounded-full text-sm font-mono">Logic</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <a href="#" class="text-cyber-blue hover:text-white font-semibold transition-colors group">
+                                Reason & Learn →
+                                <i class="fas fa-external-link-alt ml-2 group-hover:translate-x-1 transition-transform"></i>
+                            </a>
+                            <div class="flex space-x-2">
+                                <a href="#" class="text-gray-400 hover:text-cyber-blue transition-colors">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                                <a href="#" class="text-gray-400 hover:text-cyber-blue transition-colors">
+                                    <i class="fas fa-play"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 6: Consciousness Simulator -->
+                <div class="project-card glass-morphism rounded-2xl overflow-hidden group hover:scale-105 transition-all duration-300">
+                    <div class="relative h-48 bg-gradient-to-br from-cyber-purple/20 to-cyber-green/20 overflow-hidden">
+                        <div class="absolute inset-0 neural-grid-bg opacity-30"></div>
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <i class="fas fa-infinity text-6xl text-cyber-purple group-hover:rotate-180 transition-transform duration-700"></i>
+                        </div>
+                        <div class="absolute top-4 right-4">
+                            <span class="bg-cyber-purple/20 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-mono text-cyber-purple">CONSCIOUSNESS</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-white mb-3 group-hover:text-cyber-purple transition-colors">Digital Consciousness</h3>
+                        <p class="text-gray-400 mb-4">Experimental framework for simulating aspects of consciousness using integrated information theory</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-cyber-purple/20 text-cyber-purple px-3 py-1 rounded-full text-sm font-mono">IIT</span>
+                            <span class="bg-cyber-green/20 text-cyber-green px-3 py-1 rounded-full text-sm font-mono">Neural ODE</span>
+                            <span class="bg-cyber-pink/20 text-cyber-pink px-3 py-1 rounded-full text-sm font-mono">Emergence</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <a href="#" class="text-cyber-purple hover:text-white font-semibold transition-colors group">
+                                Simulate Mind →
+                                <i class="fas fa-external-link-alt ml-2 group-hover:translate-x-1 transition-transform"></i>
+                            </a>
+                            <div class="flex space-x-2">
+                                <a href="#" class="text-gray-400 hover:text-cyber-purple transition-colors">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                                <a href="#" class="text-gray-400 hover:text-cyber-purple transition-colors">
+                                    <i class="fas fa-play"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-16">
+                <button class="group relative bg-gradient-to-r from-cyber-blue to-cyber-purple px-12 py-4 rounded-lg font-bold text-lg overflow-hidden transition-all duration-300 hover:scale-105">
+                    <span class="relative z-10">Explore Neural Archives</span>
+                    <div class="absolute inset-0 bg-gradient-to-r from-cyber-purple to-cyber-blue opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 relative">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16 animate-fadeInUp">
+                <h2 class="text-4xl md:text-6xl font-black mb-6">
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyber-green to-cyber-blue">NEURAL</span> 
+                    <span class="text-white">CONNECT</span>
+                </h2>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                    Ready to build the future of AI together? Let's create something extraordinary.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <div class="space-y-8 animate-slideInLeft">
+                    <div class="glass-morphism p-8 rounded-2xl">
+                        <h3 class="text-2xl font-bold text-cyber-blue mb-6">
+                            <i class="fas fa-rocket mr-3"></i>
+                            Let's Architect Intelligence
+                        </h3>
+                        <p class="text-lg text-gray-300 mb-6">
+                            Whether you need cutting-edge AI solutions, research collaboration, or want to discuss the future of artificial consciousness, I'm here to help transform your vision into neural reality.
+                        </p>
+                        <div class="space-y-4">
+                            <div class="flex items-center group">
+                                <div class="w-12 h-12 glass-morphism rounded-lg flex items-center justify-center mr-4 group-hover:bg-cyber-blue/20 transition-colors">
+                                    <i class="fas fa-envelope text-cyber-blue"></i>
+                                </div>
+                                <div>
+                                    <div class="font-semibold text-white">Neural Mail</div>
+                                    <div class="text-gray-400">sushantrana2005@gmail.com</div>
+                                </div>
+                            </div>
+                            <div class="flex items-center group">
+                                <div class="w-12 h-12 glass-morphism rounded-lg flex items-center justify-center mr-4 group-hover:bg-cyber-purple/20 transition-colors">
+                                    <i class="fas fa-brain text-cyber-purple"></i>
+                                </div>
+                                <div>
+                                    <div class="font-semibold text-white">Mobile number</div>
+                                    <div class="text-gray-400">+91 6395487715</div>
+                                </div>
+                            </div>
+                            <div class="flex items-center group">
+                                <div class="w-12 h-12 glass-morphism rounded-lg flex items-center justify-center mr-4 group-hover:bg-cyber-green/20 transition-colors">
+                                    <i class="fas fa-map-marker-alt text-cyber-green"></i>
+                                </div>
+                                <div>
+                                    <div class="font-semibold text-white">Live & Born</div>
+                                    <div class="text-gray-400">Uttrakhand, Roorkee</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Social Neural Network -->
+                    <div class="glass-morphism p-8 rounded-2xl">
+                        <h4 class="text-xl font-bold text-white mb-6">Neural Social Network</h4>
+                        <div class="grid grid-cols-2 gap-4">
+                            <a href="#" class="social-neural group glass-morphism p-4 rounded-xl text-center hover:bg-gradient-to-br hover:from-cyber-blue/20 hover:to-transparent transition-all duration-300">
+                                <i class="fab fa-linkedin text-2xl text-cyber-blue mb-2 group-hover:scale-110 transition-transform"></i>
+                                <div class="text-sm text-gray-400">Professional</div>
+                            </a>
+                            <a href="#" class="social-neural group glass-morphism p-4 rounded-xl text-center hover:bg-gradient-to-br hover:from-cyber-purple/20 hover:to-transparent transition-all duration-300">
+                                <i class="fab fa-github text-2xl text-cyber-purple mb-2 group-hover:scale-110 transition-transform"></i>
+                                <div class="text-sm text-gray-400">Code Neural</div>
+                            </a>
+                            <a href="#" class="social-neural group glass-morphism p-4 rounded-xl text-center hover:bg-gradient-to-br hover:from-cyber-green/20 hover:to-transparent transition-all duration-300">
+                                <i class="fab fa-twitter text-2xl text-cyber-green mb-2 group-hover:scale-110 transition-transform"></i>
+                                <div class="text-sm text-gray-400">Neural Thoughts</div>
+                            </a>
+                            <a href="#" class="social-neural group glass-morphism p-4 rounded-xl text-center hover:bg-gradient-to-br hover:from-cyber-pink/20 hover:to-transparent transition-all duration-300">
+                                <i class="fab fa-medium text-2xl text-cyber-pink mb-2 group-hover:scale-110 transition-transform"></i>
+                                <div class="text-sm text-gray-400">AI Articles</div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="animate-slideInRight">
+                    <div class="glass-morphism p-8 rounded-2xl">
+                        <h3 class="text-2xl font-bold text-white mb-6">
+                            <i class="fas fa-paper-plane mr-3"></i>
+                            Initialize Communication
+                        </h3>
+                        <form class="neural-form space-y-6">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div class="input-group">
+                                    <label class="block text-gray-300 mb-2 font-semibold">Subject Protocol</label>
+                                <input type="text" class="w-full px-4 py-3 bg-dark-card border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-cyber-blue focus:border-transparent transition-all duration-300 text-white" placeholder="AI Project Discussion">
+                            </div>
+                            <div class="input-group">
+                                <label class="block text-gray-300 mb-2 font-semibold">Neural Message</label>
+                                <textarea rows="6" class="w-full px-4 py-3 bg-dark-card border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-cyber-blue focus:border-transparent transition-all duration-300 text-white resize-none" placeholder="Describe your AI vision, project requirements, or collaboration ideas..."></textarea>
+                            </div>
+                            <button type="submit" class="group relative w-full bg-gradient-to-r from-cyber-blue to-cyber-purple px-8 py-4 rounded-lg font-bold text-lg overflow-hidden transition-all duration-300 hover:scale-105">
+                                <span class="relative z-10 flex items-center justify-center">
+                                    <i class="fas fa-rocket mr-3 group-hover:translate-x-1 transition-transform"></i>
+                                    Transmit Neural Signal
+                                </span>
+                                <div class="absolute inset-0 bg-gradient-to-r from-cyber-purple to-cyber-green opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                            </button>
+                        </form>
+                    </div>
+
+                    <!-- Quick Connect Options -->
+                    <div class="mt-8 grid grid-cols-2 gap-4">
+                        <button class="glass-morphism p-4 rounded-xl text-center group hover:bg-gradient-to-br hover:from-cyber-blue/20 hover:to-transparent transition-all duration-300">
+                            <i class="fas fa-calendar text-2xl text-cyber-blue mb-2 group-hover:scale-110 transition-transform"></i>
+                            <div class="text-sm text-gray-300 font-semibold">Schedule Neural Sync</div>
+                        </button>
+                        <button class="glass-morphism p-4 rounded-xl text-center group hover:bg-gradient-to-br hover:from-cyber-purple/20 hover:to-transparent transition-all duration-300">
+                            <i class="fas fa-download text-2xl text-cyber-purple mb-2 group-hover:scale-110 transition-transform"></i>
+                            <div class="text-sm text-gray-300 font-semibold">Download Neural CV</div>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 border-t border-gray-800">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="space-y-4">
+                    <div class="text-2xl font-bold font-mono">
+                        <span class="text-cyber-blue">&lt;</span>
+                        <span class="text-white">NEURAL</span>
+                        <span class="text-cyber-purple">MIND</span>
+                        <span class="text-cyber-blue">/&gt;</span>
+                    </div>
+                    <p class="text-gray-400">Architecting the future of artificial intelligence, one neural connection at a time.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-cyber-blue transition-colors">
+                            <i class="fab fa-linkedin text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-cyber-purple transition-colors">
+                            <i class="fab fa-github text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-cyber-green transition-colors">
+                            <i class="fab fa-twitter text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-cyber-pink transition-colors">
+                            <i class="fab fa-medium text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4 text-white">Neural Navigation</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="text-gray-400 hover:text-cyber-blue transition-colors">Neural Home</a></li>
+                        <li><a href="#about" class="text-gray-400 hover:text-cyber-blue transition-colors">AI Architect</a></li>
+                        <li><a href="#skills" class="text-gray-400 hover:text-cyber-blue transition-colors">Neural Toolkit</a></li>
+                        <li><a href="#projects" class="text-gray-400 hover:text-cyber-blue transition-colors">AI Creations</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4 text-white">AI Specializations</h4>
+                    <ul class="space-y-2">
+                        <li class="text-gray-400">Deep Learning</li>
+                        <li class="text-gray-400">Neural Networks</li>
+                        <li class="text-gray-400">AGI Research</li>
+                        <li class="text-gray-400">Quantum AI</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4 text-white">Neural Status</h4>
+                    <div class="space-y-3">
+                        <div class="flex items-center">
+                            <div class="w-3 h-3 bg-cyber-green rounded-full mr-3 animate-pulse"></div>
+                            <span class="text-gray-400">Neural Networks: Online</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-3 h-3 bg-cyber-blue rounded-full mr-3 animate-pulse"></div>
+                            <span class="text-gray-400">AI Systems: Learning</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-3 h-3 bg-cyber-purple rounded-full mr-3 animate-pulse"></div>
+                            <span class="text-gray-400">Consciousness: Emerging</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <p class="text-gray-400 mb-4 md:mb-0">© 2024 Neural Mind. All neural rights reserved.</p>
+                    <div class="flex space-x-6 text-sm">
+                        <a href="#" class="text-gray-400 hover:text-cyber-blue transition-colors">Neural Privacy</a>
+                        <a href="#" class="text-gray-400 hover:text-cyber-blue transition-colors">AI Ethics</a>
+                        <a href="#" class="text-gray-400 hover:text-cyber-blue transition-colors">Neural Terms</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize Matrix Background
+        function initMatrixBackground() {
+            const matrixBg = document.getElementById('matrixBg');
+            const chars = '01アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン';
+            
+            for (let i = 0; i < 50; i++) {
+                const column = document.createElement('div');
+                column.className = 'code-rain';
+                column.style.left = Math.random() * 100 + '%';
+                column.style.animationDelay = Math.random() * 20 + 's';
+                column.style.animationDuration = (Math.random() * 10 + 10) + 's';
+                
+                let text = '';
+                for (let j = 0; j < Math.random() * 10 + 5; j++) {
+                    text += chars.charAt(Math.floor(Math.random() * chars.length)) + '<br>';
+                }
+                column.innerHTML = text;
+                matrixBg.appendChild(column);
+            }
+        }
+
+        // Neural Network Background
+        function createNeuralNetwork() {
+            const network = document.getElementById('neuralNetwork');
+            const nodes = [];
+            
+            // Create neural nodes
+            for (let i = 0; i < 20; i++) {
+                const node = document.createElement('div');
+                node.className = 'neural-node';
+                node.style.left = Math.random() * 100 + '%';
+                node.style.top = Math.random() * 100 + '%';
+                node.style.animationDelay = Math.random() * 3 + 's';
+                network.appendChild(node);
+                nodes.push(node);
+            }
+            
+            // Create connections
+            for (let i = 0; i < 15; i++) {
+                const connection = document.createElement('div');
+                connection.className = 'neural-connection';
+                connection.style.left = Math.random() * 100 + '%';
+                connection.style.top = Math.random() * 100 + '%';
+                connection.style.width = Math.random() * 200 + 50 + 'px';
+                connection.style.transform = `rotate(${Math.random() * 360}deg)`;
+                connection.style.animationDelay = Math.random() * 2 + 's';
+                network.appendChild(connection);
+            }
+        }
+
+        // Typewriter Effect
+        function typeWriter() {
+            const texts = [
+                'Initializing Neural Interface...',
+                'Loading AI Protocols...',
+                'Consciousness Online...',
+                'Ready for Neural Connection.'
+            ];
+            
+            const typewriterElement = document.getElementById('typewriter');
+            let textIndex = 0;
+            let charIndex = 0;
+            
+            function type() {
+                if (charIndex < texts[textIndex].length) {
+                    typewriterElement.textContent = texts[textIndex].substring(0, charIndex + 1);
+                    charIndex++;
+                    setTimeout(type, 50);
+                } else {
+                    setTimeout(erase, 2000);
+                }
+            }
+            
+            function erase() {
+                if (charIndex > 0) {
+                    typewriterElement.textContent = texts[textIndex].substring(0, charIndex - 1);
+                    charIndex--;
+                    setTimeout(erase, 30);
+                } else {
+                    textIndex = (textIndex + 1) % texts.length;
+                    setTimeout(type, 500);
+                }
+            }
+            
+            type();
+        }
+
+        // Counter Animation
+        function animateCounters() {
+            const counters = document.querySelectorAll('[data-count]');
+            
+            counters.forEach(counter => {
+                const target = parseInt(counter.getAttribute('data-count'));
+                const increment = target / 100;
+                let current = 0;
+                
+                const timer = setInterval(() => {
+                    current += increment;
+                    if (current >= target) {
+                        counter.textContent = target + (target === 99.7 ? '' : '');
+                        clearInterval(timer);
+                    } else {
+                        counter.textContent = Math.floor(current);
+                    }
+                }, 20);
+            });
+        }
+
+        // Smooth Scrolling
+        function initSmoothScrolling() {
+            const navLinks = document.querySelectorAll('.nav-link');
+            
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href').substring(1);
+                    const targetElement = document.getElementById(targetId);
+                    
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        }
+
+        // Form Submission
+        function initFormHandling() {
+            const form = document.querySelector('.neural-form');
+            if (form) {
+                form.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    // Create success animation
+                    const button = form.querySelector('button[type="submit"]');
+                    const originalText = button.innerHTML;
+                    
+                    button.innerHTML = '<i class="fas fa-check mr-3"></i>Neural Signal Transmitted!';
+                    button.style.background = 'linear-gradient(to right, #10b981, #059669)';
+                    
+                    setTimeout(() => {
+                        button.innerHTML = originalText;
+                        button.style.background = '';
+                        form.reset();
+                    }, 3000);
+                });
+            }
+        }
+
+        // Intersection Observer for Animations
+        function initScrollAnimations() {
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.animate-fadeInUp, .animate-slideInLeft, .animate-slideInRight').forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(30px)';
+                observer.observe(el);
+            });
+        }
+
+        // Mobile Menu
+        function initMobileMenu() {
+            const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+            const nav = document.querySelector('nav .glass-morphism > div');
+            
+            if (mobileMenuBtn && nav) {
+                mobileMenuBtn.addEventListener('click', () => {
+                    const menu = nav.querySelector('.hidden');
+                    if (menu) {
+                        menu.classList.toggle('hidden');
+                        menu.classList.toggle('flex');
+                    }
+                });
+            }
+        }
+
+        // Particle System for Enhanced Visual Effects
+        function createParticleSystem() {
+            const particleContainer = document.createElement('div');
+            particleContainer.style.position = 'fixed';
+            particleContainer.style.top = '0';
+            particleContainer.style.left = '0';
+            particleContainer.style.width = '100%';
+            particleContainer.style.height = '100%';
+            particleContainer.style.pointerEvents = 'none';
+            particleContainer.style.zIndex = '1';
+            particleContainer.style.overflow = 'hidden';
+            document.body.appendChild(particleContainer);
+
+            function createParticle() {
+                const particle = document.createElement('div');
+                particle.style.position = 'absolute';
+                particle.style.width = Math.random() * 3 + 1 + 'px';
+                particle.style.height = particle.style.width;
+                particle.style.backgroundColor = ['#00d4ff', '#8b5cf6', '#10b981', '#f43f5e'][Math.floor(Math.random() * 4)];
+                particle.style.borderRadius = '50%';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.top = '100%';
+                particle.style.opacity = Math.random() * 0.5 + 0.2;
+                
+                particleContainer.appendChild(particle);
+                
+                const animationDuration = Math.random() * 20000 + 10000;
+                const horizontalDrift = (Math.random() - 0.5) * 200;
+                
+                particle.animate([
+                    { transform: 'translateY(0px) translateX(0px)', opacity: particle.style.opacity },
+                    { transform: `translateY(-${window.innerHeight + 100}px) translateX(${horizontalDrift}px)`, opacity: 0 }
+                ], {
+                    duration: animationDuration,
+                    easing: 'linear'
+                }).onfinish = () => {
+                    particle.remove();
+                };
+            }
+
+            setInterval(createParticle, 300);
+        }
+
+        // Initialize everything when DOM is loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            initMatrixBackground();
+            createNeuralNetwork();
+            typeWriter();
+            animateCounters();
+            initSmoothScrolling();
+            initFormHandling();
+            initScrollAnimations();
+            initMobileMenu();
+            createParticleSystem();
+            
+            // Add some delay to counter animation for better UX
+            setTimeout(animateCounters, 1000);
+        });
+
+        // Add hover effects for project cards
+        document.addEventListener('DOMContentLoaded', function() {
+            const projectCards = document.querySelectorAll('.project-card');
+            
+            projectCards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-10px) rotateX(5deg)';
+                    this.style.boxShadow = '0 20px 40px rgba(0, 212, 255, 0.3)';
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0) rotateX(0)';
+                    this.style.boxShadow = '';
+                });
+            });
+        });
+
+        // Add dynamic glow effects
+        function addDynamicGlow() {
+            const glowElements = document.querySelectorAll('.glass-morphism');
+            
+            glowElements.forEach(element => {
+                element.addEventListener('mouseenter', function() {
+                    this.style.boxShadow = '0 0 30px rgba(0, 212, 255, 0.3)';
+                });
+                
+                element.addEventListener('mouseleave', function() {
+                    this.style.boxShadow = '';
+                });
+            });
+        }
+
+        // Initialize glow effects
+        document.addEventListener('DOMContentLoaded', addDynamicGlow);
+    </script>
+</body>
+</html><form class="neural-form space-y-6">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="input-group">
+            <label class="block text-gray-300 mb-2 font-semibold">Subject Protocol</label>
+            <input type="text" class="w-full px-4 py-3 bg-dark-card border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-cyber-blue focus:border-transparent transition-all duration-300 text-white" placeholder="AI Project Discussion">
+        </div>
+        <div class="input-group">
+            <label class="block text-gray-300 mb-2 font-semibold">Neural Message</label>
+            <textarea rows="6" class="w-full px-4 py-3 bg-dark-card border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-cyber-blue focus:border-transparent transition-all duration-300 text-white resize-none" placeholder="Describe your AI vision, project requirements, or collaboration ideas..."></textarea>
+        </div>
+        <!-- INSERT THE ADJUSTED CODE HERE, replacing the broken lines -->
+    </div>
+    <button type="submit" class="w-full px-4 py-3 bg-cyber-blue text-white rounded-lg hover:bg-cyber-purple transition-all duration-300">Transmit Neural Signal</button>
+</form>
