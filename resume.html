@@ -89,6 +89,16 @@
             40% { transform: translateY(-10px); }
             60% { transform: translateY(-5px); }
         }
+        btn-primary {
+            background-color: var(--primary);
+            border-color: var(--primary);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        btn-primary:hover,
+        btn-primary:active {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(13, 110, 253, 0.4);
+        }
     </style>
 </head>
 <body>
@@ -194,9 +204,12 @@
                             </ul>
                         </div>
                     </div>
-                    <a href="assets/Sushant_Rana_Resume.pdf" download class="btn btn-primary btn-lg rounded-circle floating-btn" data-aos="zoom-in"data-aos-delay="500">
-                        <i data-feather="download"></i>
-                    </a>
+                    <div>
+                        <a href="assests/Sushant_Rana_Resume.pdf" download class="btn btn-primary btn-lg ">
+                            Download Resume
+                        </a>
+                    </div>
+
                     <!-- Certifications -->
                     <div class="card shadow-sm mb-4" data-aos="fade-left" data-aos-delay="100">
                         <div class="card-body">

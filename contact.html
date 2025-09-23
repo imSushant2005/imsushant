@@ -209,9 +209,10 @@
         document.getElementById('contactForm').addEventListener('submit', function(e) {
             e.preventDefault();
             const form = this;
+            const data = new FormData(form);
             fetch(form.action, {
                 method: 'POST',
-                body: new FormData(form),
+                body: data,
                 headers: { 'Accept': 'application/json' }
             }).then(response => {
                 if (response.ok) {
@@ -220,6 +221,8 @@
                 } else {
                     alert('Oops! There was a problem sending your message.');
                 }
+            }).catch(error => {
+                alert('Oops! There was a problem sending your message.');
             });
         });
         
