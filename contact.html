@@ -150,7 +150,7 @@
                             
                             <h3 class="fw-bold mb-4">Find Me On</h3>
                             <div class="d-flex gap-3">
-                                <a href="https://github.com/imSushant2005" class="social-icon bg-primary text-white">
+                                <a href="https://www.linkedin.com/in/sushantrana05/" class="social-icon bg-primary text-white">
                                     <i data-feather="linkedin"></i>
                                 </a>
                                 <a href="https://github.com/sushanrana2005" class="social-icon bg-dark text-white">
@@ -208,16 +208,6 @@
         // Form submission
         document.getElementById('contactForm').addEventListener('submit', function(e) {
             e.preventDefault();
-            alert('Thank you for your message! I will get back to you soon.');
-            this.reset();
-        });
-        
-        // Initialize map when page loads
-        window.onload = initMap;
-    </script>
-    <script>
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault();
             const form = this;
             fetch(form.action, {
                 method: 'POST',
@@ -232,6 +222,10 @@
                 }
             });
         });
-</script>
+        
+        // Initialize map when page loads
+        window.onload = initMap;
+    </script>
+
 </body>
 </html>
