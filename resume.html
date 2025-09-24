@@ -11,16 +11,16 @@
     <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
     <style>
         :root {
-            --primary: #667eea;
-            --secondary: #764ba2;
-            --accent: #f2edf3;
-            --dark: #2c3e50;
-            --light: #ecf0f1;
-            --gradient-1: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            --gradient-2: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-            --gradient-3: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-            --glass-bg: rgba(255, 255, 255, 0.1);
-            --glass-border: rgba(255, 255, 255, 0.2);
+            --primary: #3B82F6; /* Vibrant Tech Blue */
+            --secondary: #9333EA; /* Futuristic Purple */
+            --accent: rgba(255, 255, 255, 0.08); /* Glassmorphism background */
+            --dark: #1E293B; /* Deep Navy for text */
+            --light: #E2E8F0; /* Muted Gray for borders/sections */
+            --gradient-1: linear-gradient(135deg, #3B82F6 0%, #9333EA 100%);
+            --gradient-2: linear-gradient(135deg, #9333EA 0%, #F43F5E 100%);
+            --gradient-3: linear-gradient(135deg, #06B6D4 0%, #3B82F6 100%);
+            --glass-bg: rgba(255, 255, 255, 0.08);
+            --glass-border: rgba(255, 255, 255, 0.15);
         }
 
         * {
@@ -30,7 +30,7 @@
         body {
             font-family: 'Poppins', sans-serif;
             scroll-behavior: smooth;
-            background: linear-gradient(-45deg, #667eea, #764ba2, #f093fb, #f5576c);
+            background: linear-gradient(-45deg, #0F172A, #1E293B, #312E81, #1E1B4B);
             background-size: 400% 400%;
             animation: gradientShift 15s ease infinite;
             min-height: 100vh;
@@ -65,7 +65,11 @@
             transition: all 0.3s ease;
             position: relative;
         }
-
+        .nav-link:hover,
+        .nav-link.active {
+            color: var(--primary) !important;
+            text-shadow: 0 0 10px var(--primary);
+        }
         .navbar-nav .nav-link::after {
             content: '';
             position: absolute;
@@ -90,20 +94,32 @@
             left: 0;
             width: 100%;
             height: 100%;
-            overflow: hidden;
+            pointer-events: none;
             z-index: -1;
         }
 
         .particle {
             position: absolute;
-            background: rgba(255, 255, 255, 0.1);
+            width: 2px;
+            height: 2px;
+            background: var(--primary);
             border-radius: 50%;
-            animation: float 6s ease-in-out infinite;
+            animation: float 8s linear infinite;
+            opacity: 0.7;
+            box-shadow: 0 0 6px var(--primary);
         }
 
         @keyframes float {
-            0%, 100% { transform: translateY(0px) rotate(0deg); }
-            50% { transform: translateY(-20px) rotate(180deg); }
+            0% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 0;
+            }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% {
+                transform: translateY(-100px) rotate(360deg);
+                opacity: 0;
+            }
         }
 
         /* Hero Section with 3D Effect */
@@ -324,7 +340,35 @@
             transform: translateY(-3px);
             box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
         }
+        * Loading Animation */
+        .page-loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--dark-bg);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            opacity: 1;
+            transition: opacity 0.5s ease;
+        }
 
+        .loader-hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .cyber-loader {
+            width: 60px;
+            height: 60px;
+            border: 3px solid rgba(0, 212, 255, 0.3);
+            border-top: 3px solid var(--primary);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
         /* Floating Elements */
         .floating-btn {
             position: fixed;
@@ -592,7 +636,7 @@
 
                     <!-- Download Resume -->
                     <div class="text-center mb-4" data-aos="fade-left" data-aos-delay="100">
-                        <a href="assests/Sushant_Rana.pdf" download class="btn btn-gradient btn-lg">
+                        <a href="assets/Sushant_Rana.pdf" download class="btn btn-gradient btn-lg">
                             <i data-feather="download" class="me-2"></i> Download Resume
                         </a>
                     </div>
@@ -682,22 +726,28 @@
         }
 
         // Animate Skill Bars
-        function animateSkillBars() {
-            const skillBars = document.querySelectorAll('.skill-progress');
-            
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        const width = entry.target.getAttribute('data-width');
-                        entry.target.style.width = width;
-                    }
-                });
-            });
-
-            skillBars.forEach(bar => {
-                observer.observe(bar);
-            });
-        }
+        function animateSkills() {
+    const skillBars = document.querySelectorAll('.skill-progress');
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const progressBar = entry.target;
+                const width = progressBar.getAttribute('data-width');
+                
+                setTimeout(() => {
+                    progressBar.style.width = width + '%';
+                }, 300);
+                
+                observer.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.5
+    });
+    
+    skillBars.forEach(bar => observer.observe(bar));
+}
 
         // Parallax Effect for Header
         function parallaxEffect() {

@@ -4,69 +4,482 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projects | Sushant Rana</title>
+    <meta name="description" content="Explore a portfolio of innovative AI and Machine Learning projects by Sushant Rana, including NLP, computer vision, and predictive models.">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
         :root {
-            --primary: #0d6efd;
-            --secondary: #6c757d;
-            --accent: #ffc107;
-        }
-        body {
-            font-family: 'Poppins', sans-serif;
-        }
-        .navbar {
-            backdrop-filter: blur(10px);
-            background: rgba(255, 255, 255, 0.9);
-        }
-        .project-card {
-            transition: transform 0.3s, box-shadow 0.3s;
-            border: none;
-            overflow: hidden;
-        }
-        .project-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-        }
-        .project-img {
-            height: 200px;
-            object-fit: cover;
-            transition: transform 0.5s;
-        }
-        .project-card:hover .project-img {
-            transform: scale(1.05);
-        }
-        .tech-badge {
-            background-color: #f8f9fa;
-            color: var(--secondary);
-            border: 1px solid #dee2e6;
-            margin-right: 5px;
-            margin-bottom: 5px;
-        }
-        .modal-img {
-            max-height: 300px;
-            object-fit: contain;
-        }
-        .chart-container {
-            position: relative;
-            height: 250px;
-            margin-bottom: 20px;
-        }
+    --primary: #667eea;
+    --secondary: #764ba2;
+    --accent: #f093fb;
+    --cyber-blue: #00f2fe;
+    --cyber-purple: #4facfe;
+    --dark: #0a0e1a;
+    --darker: #050810;
+    --light: #ffffff;
+    --glass-bg: rgba(255, 255, 255, 0.08);
+    --glass-border: rgba(255, 255, 255, 0.15);
+    --gradient-hero: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+    --gradient-cyber: linear-gradient(135deg, #00f2fe 0%, #4facfe 100%);
+    --gradient-warm: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    --text-glow: 0 0 20px rgba(255, 255, 255, 0.5);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+    background: var(--dark);
+    color: var(--light);
+    scroll-behavior: smooth;
+}
+
+/* Animated Background */
+.animated-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -2;
+    background: linear-gradient(-45deg, #0a0e1a, #1a1a2e, #16213e, #0f3460);
+    background-size: 400% 400%;
+    animation: gradientShift 20s ease infinite;
+}
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Particle System */
+.particles-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.particle {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    animation: particleFloat 8s linear infinite;
+}
+
+@keyframes particleFloat {
+    0% {
+        transform: translateY(100vh) rotate(0deg);
+        opacity: 0;
+    }
+    10% { opacity: 1; }
+    90% { opacity: 1; }
+    100% {
+        transform: translateY(-100px) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* Enhanced Navigation */
+.navbar {
+    backdrop-filter: blur(25px);
+    background: var(--glass-bg);
+    border-bottom: 1px solid var(--glass-border);
+    transition: all 0.3s ease;
+    padding: 1rem 0;
+}
+
+.navbar.scrolled {
+    background: rgba(10, 14, 26, 0.9);
+    backdrop-filter: blur(30px);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+}
+
+.navbar-brand {
+    font-weight: 800;
+    font-size: 1.8rem;
+    background: var(--gradient-cyber);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: var(--text-glow);
+    transition: all 0.3s ease;
+}
+
+.navbar-brand:hover {
+    transform: scale(1.05);
+    filter: brightness(1.2);
+}
+
+.navbar-nav .nav-link {
+    color: rgba(255, 255, 255, 0.8) !important;
+    font-weight: 500;
+    margin: 0 10px;
+    position: relative;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.9rem;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+    color: var(--light) !important;
+    text-shadow: var(--text-glow);
+}
+
+.navbar-nav .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: var(--gradient-cyber);
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.navbar-nav .nav-link:hover::after,
+.navbar-nav .nav-link.active::after {
+    width: 100%;
+    box-shadow: 0 0 10px var(--cyber-blue);
+}
+
+/* Projects Hero Section */
+.projects-hero {
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+}
+
+.projects-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--gradient-hero);
+    opacity: 0.1;
+    z-index: -1;
+}
+
+.hero-title {
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    font-weight: 900;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+}
+
+.hero-title .highlight {
+    background: var(--gradient-cyber);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    position: relative;
+}
+
+.hero-title .highlight::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--gradient-cyber);
+    filter: blur(20px);
+    opacity: 0.3;
+    z-index: -1;
+}
+
+.hero-subtitle {
+    font-size: clamp(1rem, 3vw, 1.3rem);
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.6;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Enhanced Project Cards */
+.project-card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(20px);
+    border: 1px solid var(--glass-border) !important;
+    border-radius: 20px;
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+    cursor: pointer;
+    color: var(--light);
+}
+
+.project-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+    transition: left 0.8s;
+    z-index: 1;
+}
+
+.project-card:hover::before {
+    left: 100%;
+}
+
+.project-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 
+        0 25px 60px rgba(0, 0, 0, 0.4),
+        0 0 0 1px rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.3) !important;
+}
+
+.project-img {
+    height: 250px;
+    object-fit: cover;
+    transition: transform 0.5s;
+}
+.project-card:hover .project-img {
+    transform: scale(1.1);
+}
+
+.project-card .card-body {
+    position: relative;
+    z-index: 2;
+    padding: 2.5rem;
+}
+
+.project-card .card-title {
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+.project-card .card-text {
+    color: rgba(255, 255, 255, 0.7) !important;
+}
+
+.tech-badge {
+    background-color: rgba(255, 255, 255, 0.1) !important;
+    color: var(--light) !important;
+    border: 1px solid var(--glass-border) !important;
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+}
+
+.tech-badge:hover {
+    background: var(--gradient-cyber) !important;
+    color: white !important;
+    box-shadow: 0 0 10px var(--cyber-blue);
+    transform: scale(1.1);
+}
+
+/* Modal styling */
+.modal-content.glass-modal {
+    background: var(--glass-bg);
+    backdrop-filter: blur(25px);
+    border: 1px solid var(--glass-border);
+    color: var(--light);
+}
+
+.modal-header, .modal-footer {
+    border-color: var(--glass-border);
+}
+
+.modal-title {
+    background: var(--gradient-cyber);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 800;
+    text-shadow: var(--text-glow);
+}
+.modal-body p, .modal-body li {
+    color: rgba(255, 255, 255, 0.9);
+}
+.modal-body ul {
+    list-style-type: '⚡ ';
+    padding-left: 1.5rem;
+}
+.modal-body li {
+    margin-bottom: 0.5rem;
+}
+
+.btn-close-white {
+    filter: invert(1);
+    opacity: 0.8;
+}
+
+/* Enhanced Buttons */
+.btn-primary {
+    background: var(--gradient-cyber);
+    border: none;
+    color: white;
+    font-weight: 600;
+    padding: 10px 20px;
+    border-radius: 50px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 30px rgba(0, 242, 254, 0.3);
+}
+.btn-primary:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 15px 40px rgba(0, 242, 254, 0.5);
+    filter: brightness(1.2);
+}
+.btn-outline-secondary {
+    border-color: var(--glass-border);
+    color: rgba(255, 255, 255, 0.8);
+    background: transparent;
+    transition: all 0.3s ease;
+}
+.btn-outline-secondary:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    transform: translateY(-3px);
+}
+
+/* Chart styling */
+.chart-container {
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 15px;
+    padding: 15px;
+}
+
+/* Footer Enhancement */
+.footer {
+    background: var(--darker);
+    border-top: 1px solid var(--glass-border);
+    position: relative;
+}
+
+.footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--gradient-hero);
+    opacity: 0.05;
+    z-index: -1;
+}
+
+.footer-social a {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 1.5rem;
+    margin: 0 15px;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.footer-social a:hover {
+    color: var(--cyber-blue);
+    transform: translateY(-3px) scale(1.2);
+    text-shadow: 0 0 20px var(--cyber-blue);
+}
+
+.footer-social a::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: var(--cyber-blue);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 0.3s ease;
+    opacity: 0.3;
+    z-index: -1;
+}
+
+.footer-social a:hover::after {
+    width: 40px;
+    height: 40px;
+}
+
+/* Loading Animation */
+.loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--dark);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    transition: opacity 0.5s ease;
+}
+
+.loading-overlay.fade-out {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.loader {
+    width: 60px;
+    height: 60px;
+    border: 3px solid transparent;
+    border-top: 3px solid var(--cyber-blue);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .projects-hero {
+        min-height: 40vh;
+        padding: 2rem 0;
+    }
+}
     </style>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3">
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="loader"></div>
+    </div>
+
+    <div class="animated-bg"></div>
+    
+    <div class="particles-container" id="particlesContainer"></div>
+
+    <nav class="navbar navbar-expand-lg fixed-top" id="navbar">
         <div class="container">
-            <a class="navbar-brand fw-bold" href="index.html">Sushant Rana</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
+            <a class="navbar-brand" href="index.html" data-aos="fade-right">Sushant Rana</a>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <i data-feather="menu" style="color: white;"></i>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
+                <ul class="navbar-nav ms-auto" data-aos="fade-left">
                     <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
                     <li class="nav-item"><a class="nav-link active" href="projects.html">Projects</a></li>
@@ -77,26 +490,27 @@
         </div>
     </nav>
 
-    <!-- Projects Header -->
-    <section class="py-5 mt-5 bg-light">
-        <div class="container py-5 text-center">
-            <h1 class="display-5 fw-bold mb-3" data-aos="fade-up">My <span class="text-primary">Projects</span></h1>
-            <p class="lead" data-aos="fade-up" data-aos-delay="100">Practical applications of machine learning and AI</p>
+    <section class="projects-hero">
+        <div class="container text-center">
+            <h1 class="hero-title" data-aos="fade-up">
+                My <span class="highlight">Projects</span>
+            </h1>
+            <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="200">
+                A showcase of practical applications, from natural language processing to computer vision.
+            </p>
         </div>
     </section>
 
-    <!-- Projects Grid -->
     <section class="py-5">
         <div class="container py-5">
             <div class="row g-4">
-                <!-- Project 1 -->
                 <div class="col-lg-4 col-md-6" data-aos="fade-up">
                     <div class="project-card card h-100 border-0 shadow-sm" data-bs-toggle="modal" data-bs-target="#project1Modal">
                         <img src="http://static.photos/science/640x360/2" class="project-img card-img-top" alt="Sentiment Analysis">
                         <div class="card-body">
                             <h5 class="card-title">Sentiment Analysis Engine</h5>
                             <p class="card-text text-muted">Understanding human emotions through text using NLP techniques.</p>
-                            <div class="mt-3">
+                            <div class="mt-3 tech-badges">
                                 <span class="badge tech-badge">Python</span>
                                 <span class="badge tech-badge">NLTK</span>
                                 <span class="badge tech-badge">TensorFlow</span>
@@ -106,14 +520,13 @@
                     </div>
                 </div>
 
-                <!-- Project 2 -->
                 <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
                     <div class="project-card card h-100 border-0 shadow-sm" data-bs-toggle="modal" data-bs-target="#project2Modal">
                         <img src="http://static.photos/technology/640x360/3" class="project-img card-img-top" alt="Image Classification">
                         <div class="card-body">
                             <h5 class="card-title">Image Classification Model</h5>
                             <p class="card-text text-muted">Computer vision system that categorizes images with 94% accuracy.</p>
-                            <div class="mt-3">
+                            <div class="mt-3 tech-badges">
                                 <span class="badge tech-badge">Python</span>
                                 <span class="badge tech-badge">PyTorch</span>
                                 <span class="badge tech-badge">OpenCV</span>
@@ -123,14 +536,13 @@
                     </div>
                 </div>
 
-                <!-- Project 3 -->
                 <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
                     <div class="project-card card h-100 border-0 shadow-sm" data-bs-toggle="modal" data-bs-target="#project3Modal">
                         <img src="http://static.photos/finance/640x360/1" class="project-img card-img-top" alt="Stock Predictor">
                         <div class="card-body">
                             <h5 class="card-title">Stock Price Predictor</h5>
                             <p class="card-text text-muted">LSTM neural network forecasting financial trends.</p>
-                            <div class="mt-3">
+                            <div class="mt-3 tech-badges">
                                 <span class="badge tech-badge">Python</span>
                                 <span class="badge tech-badge">Keras</span>
                                 <span class="badge tech-badge">LSTM</span>
@@ -140,14 +552,13 @@
                     </div>
                 </div>
 
-                <!-- Project 4 -->
                 <div class="col-lg-4 col-md-6" data-aos="fade-up">
                     <div class="project-card card h-100 border-0 shadow-sm" data-bs-toggle="modal" data-bs-target="#project4Modal">
                         <img src="http://static.photos/medical/640x360/1" class="project-img card-img-top" alt="Medical Diagnosis">
                         <div class="card-body">
                             <h5 class="card-title">Medical Diagnosis Assistant</h5>
                             <p class="card-text text-muted">AI system supporting doctors in diagnosing diseases from symptoms.</p>
-                            <div class="mt-3">
+                            <div class="mt-3 tech-badges">
                                 <span class="badge tech-badge">Python</span>
                                 <span class="badge tech-badge">Scikit-learn</span>
                                 <span class="badge tech-badge">XGBoost</span>
@@ -157,14 +568,13 @@
                     </div>
                 </div>
 
-                <!-- Project 5 -->
                 <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
                     <div class="project-card card h-100 border-0 shadow-sm" data-bs-toggle="modal" data-bs-target="#project5Modal">
                         <img src="http://static.photos/office/640x360/1" class="project-img card-img-top" alt="Chatbot">
                         <div class="card-body">
                             <h5 class="card-title">AI Customer Support Chatbot</h5>
                             <p class="card-text text-muted">Conversational agent handling common customer inquiries.</p>
-                            <div class="mt-3">
+                            <div class="mt-3 tech-badges">
                                 <span class="badge tech-badge">Python</span>
                                 <span class="badge tech-badge">Transformers</span>
                                 <span class="badge tech-badge">HuggingFace</span>
@@ -174,14 +584,13 @@
                     </div>
                 </div>
 
-                <!-- Project 6 -->
                 <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
                     <div class="project-card card h-100 border-0 shadow-sm" data-bs-toggle="modal" data-bs-target="#project6Modal">
                         <img src="http://static.photos/education/640x360/1" class="project-img card-img-top" alt="Recommendation System">
                         <div class="card-body">
                             <h5 class="card-title">Personalized Learning Recommender</h5>
                             <p class="card-text text-muted">System suggesting educational content based on user behavior.</p>
-                            <div class="mt-3">
+                            <div class="mt-3 tech-badges">
                                 <span class="badge tech-badge">Python</span>
                                 <span class="badge tech-badge">Surprise</span>
                                 <span class="badge tech-badge">Collaborative Filtering</span>
@@ -194,14 +603,12 @@
         </div>
     </section>
 
-    <!-- Project Modals -->
-    <!-- Project 1 Modal -->
     <div class="modal fade" id="project1Modal" tabindex="-1" aria-hidden="true">
         <div class="modal-dialog modal-lg modal-dialog-centered">
-            <div class="modal-content">
+            <div class="modal-content glass-modal">
                 <div class="modal-header">
                     <h5 class="modal-title">Sentiment Analysis Engine</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                     <img src="http://static.photos/science/1200x630/2" class="img-fluid rounded mb-4 modal-img" alt="Sentiment Analysis">
@@ -229,13 +636,12 @@
         </div>
     </div>
 
-    <!-- Project 2 Modal -->
     <div class="modal fade" id="project2Modal" tabindex="-1" aria-hidden="true">
         <div class="modal-dialog modal-lg modal-dialog-centered">
-            <div class="modal-content">
+            <div class="modal-content glass-modal">
                 <div class="modal-header">
                     <h5 class="modal-title">Image Classification Model</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                     <img src="http://static.photos/technology/1200x630/3" class="img-fluid rounded mb-4 modal-img" alt="Image Classification">
@@ -262,20 +668,26 @@
             </div>
         </div>
     </div>
-
-    <!-- Other project modals would follow the same pattern -->
-
-    <!-- Footer -->
-    <footer class="bg-dark text-white py-4">
+    <footer class="footer py-5">
         <div class="container">
-            <div class="row">
-                <div class="col-md-6">
-                    <p class="mb-0">© 2023 Sushant Rana. All rights reserved.</p>
+            <div class="row align-items-center">
+                <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                    <p class="mb-0" style="color: rgba(255, 255, 255, 0.7);">
+                        © 2025 Sushant Rana. Crafted with passion for AI.
+                    </p>
                 </div>
-                <div class="col-md-6 text-md-end">
-                    <a href="https://github.com/imSushant2005" class="text-white me-3"><i data-feather="github"></i></a>
-                    <a href="https://www.linkedin.com/in/sushantrana05/" class="text-white me-3"><i data-feather="linkedin"></i></a>
-                    <a href="mailto:sushantrana2005@gmail.com" class="text-white"><i data-feather="mail"></i></a>
+                <div class="col-md-6 text-center text-md-end">
+                    <div class="footer-social">
+                        <a href="https://github.com/imSushant2005" target="_blank" aria-label="GitHub Profile">
+                            <i data-feather="github"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/sushantrana05/" target="_blank" aria-label="LinkedIn Profile">
+                            <i data-feather="linkedin"></i>
+                        </a>
+                        <a href="mailto:sushantrana2005@gmail.com" aria-label="Email Sushant Rana">
+                            <i data-feather="mail"></i>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -283,87 +695,267 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
     <script>
-        AOS.init({
-            duration: 800,
-            easing: 'ease-in-out'
-        });
-        feather.replace();
+        // Initialize AOS
+AOS.init({
+    duration: 1000,
+    easing: 'ease-in-out',
+    once: true,
+    offset: 100
+});
+
+// Initialize Feather Icons
+feather.replace();
+
+// Create Animated Particles
+function createParticles() {
+    const particlesContainer = document.getElementById('particlesContainer');
+    const numberOfParticles = 30;
+
+    for (let i = 0; i < numberOfParticles; i++) {
+        const particle = document.createElement('div');
+        particle.className = 'particle';
         
-        // Initialize charts when modals are shown
-        document.addEventListener('DOMContentLoaded', function() {
-            const project1Modal = document.getElementById('project1Modal');
-            const project2Modal = document.getElementById('project2Modal');
+        const size = Math.random() * 6 + 2;
+        const posX = Math.random() * 100;
+        const delay = Math.random() * 8;
+        
+        particle.style.width = size + 'px';
+        particle.style.height = size + 'px';
+        particle.style.left = posX + '%';
+        particle.style.animationDelay = delay + 's';
+        particle.style.animationDuration = (8 + Math.random() * 4) + 's';
+        
+        particlesContainer.appendChild(particle);
+    }
+}
+
+// Navbar scroll effect
+function navbarScroll() {
+    window.addEventListener('scroll', () => {
+        const navbar = document.getElementById('navbar');
+        if (window.scrollY > 100) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
+    });
+}
+
+// Mouse tracking effect for cards
+function mouseTrackingEffect() {
+    document.addEventListener('mousemove', (e) => {
+        const cards = document.querySelectorAll('.project-card');
+        
+        cards.forEach(card => {
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
             
-            project1Modal.addEventListener('shown.bs.modal', function() {
-                const ctx1 = document.getElementById('accuracyChart1').getContext('2d');
-                new Chart(ctx1, {
-                    type: 'bar',
-                    data: {
-                        labels: ['Baseline', 'With Embeddings', 'Final Model'],
-                        datasets: [{
-                            label: 'Accuracy (%)',
-                            data: [72, 85, 89],
-                            backgroundColor: [
-                                'rgba(255, 99, 132, 0.7)',
-                                'rgba(54, 162, 235, 0.7)',
-                                'rgba(75, 192, 192, 0.7)'
-                            ],
-                            borderColor: [
-                                'rgba(255, 99, 132, 1)',
-                                'rgba(54, 162, 235, 1)',
-                                'rgba(75, 192, 192, 1)'
-                            ],
-                            borderWidth: 1
-                        }]
-                    },
-                    options: {
-                        responsive: true,
-                        scales: {
-                            y: {
-                                beginAtZero: true,
-                                max: 100
+            const centerX = rect.width / 2;
+            const centerY = rect.height / 2;
+            
+            const rotateX = (y - centerY) / 20;
+            const rotateY = (centerX - x) / 20;
+            
+            if (x >= 0 && x <= rect.width && y >= 0 && y <= rect.height) {
+                card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateZ(10px)`;
+            } else {
+                card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) translateZ(0px)';
+            }
+        });
+    });
+}
+
+// Loading screen handler
+function handleLoadingScreen() {
+    const loadingOverlay = document.getElementById('loadingOverlay');
+    
+    window.addEventListener('load', () => {
+        setTimeout(() => {
+            loadingOverlay.classList.add('fade-out');
+        }, 500);
+    });
+}
+
+// Initialize all functions
+document.addEventListener('DOMContentLoaded', () => {
+    handleLoadingScreen();
+    createParticles();
+    navbarScroll();
+    mouseTrackingEffect();
+    
+    // Initialize charts when modals are shown
+    const project1Modal = document.getElementById('project1Modal');
+    const project2Modal = document.getElementById('project2Modal');
+
+    if (project1Modal) {
+        project1Modal.addEventListener('shown.bs.modal', function() {
+            const ctx1 = document.getElementById('accuracyChart1').getContext('2d');
+            new Chart(ctx1, {
+                type: 'bar',
+                data: {
+                    labels: ['Baseline', 'With Embeddings', 'Final Model'],
+                    datasets: [{
+                        label: 'Accuracy (%)',
+                        data: [72, 85, 89],
+                        backgroundColor: [
+                            'rgba(0, 242, 254, 0.7)',
+                            'rgba(75, 192, 192, 0.7)',
+                            'rgba(153, 102, 255, 0.7)'
+                        ],
+                        borderColor: [
+                            'rgba(0, 242, 254, 1)',
+                            'rgba(75, 192, 192, 1)',
+                            'rgba(153, 102, 255, 1)'
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            max: 100,
+                            grid: {
+                                color: 'rgba(255, 255, 255, 0.1)'
+                            },
+                            ticks: {
+                                color: 'rgba(255, 255, 255, 0.7)'
                             }
-                        }
-                    }
-                });
-            });
-            
-            project2Modal.addEventListener('shown.bs.modal', function() {
-                const ctx2 = document.getElementById('accuracyChart2').getContext('2d');
-                new Chart(ctx2, {
-                    type: 'line',
-                    data: {
-                        labels: ['Epoch 1', 'Epoch 5', 'Epoch 10', 'Epoch 15', 'Epoch 20'],
-                        datasets: [{
-                            label: 'Training Accuracy',
-                            data: [65, 82, 88, 91, 94],
-                            borderColor: 'rgba(75, 192, 192, 1)',
-                            backgroundColor: 'rgba(75, 192, 192, 0.2)',
-                            tension: 0.1,
-                            fill: true
                         },
-                        {
-                            label: 'Validation Accuracy',
-                            data: [60, 78, 85, 88, 90],
-                            borderColor: 'rgba(153, 102, 255, 1)',
-                            backgroundColor: 'rgba(153, 102, 255, 0.2)',
-                            tension: 0.1,
-                            fill: true
-                        }]
-                    },
-                    options: {
-                        responsive: true,
-                        scales: {
-                            y: {
-                                beginAtZero: true,
-                                max: 100
+                        x: {
+                            grid: {
+                                color: 'rgba(255, 255, 255, 0.1)'
+                            },
+                            ticks: {
+                                color: 'rgba(255, 255, 255, 0.7)'
                             }
                         }
+                    },
+                    plugins: {
+                        legend: {
+                            display: false
+                        }
                     }
-                });
+                }
             });
         });
+    }
+
+    if (project2Modal) {
+        project2Modal.addEventListener('shown.bs.modal', function() {
+            const ctx2 = document.getElementById('accuracyChart2').getContext('2d');
+            new Chart(ctx2, {
+                type: 'line',
+                data: {
+                    labels: ['Epoch 1', 'Epoch 5', 'Epoch 10', 'Epoch 15', 'Epoch 20'],
+                    datasets: [{
+                        label: 'Training Accuracy',
+                        data: [65, 82, 88, 91, 94],
+                        borderColor: 'rgba(0, 242, 254, 1)',
+                        backgroundColor: 'rgba(0, 242, 254, 0.2)',
+                        tension: 0.4,
+                        fill: true
+                    },
+                    {
+                        label: 'Validation Accuracy',
+                        data: [60, 78, 85, 88, 90],
+                        borderColor: 'rgba(153, 102, 255, 1)',
+                        backgroundColor: 'rgba(153, 102, 255, 0.2)',
+                        tension: 0.4,
+                        fill: true
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            max: 100,
+                            grid: {
+                                color: 'rgba(255, 255, 255, 0.1)'
+                            },
+                            ticks: {
+                                color: 'rgba(255, 255, 255, 0.7)'
+                            }
+                        },
+                        x: {
+                            grid: {
+                                color: 'rgba(255, 255, 255, 0.1)'
+                            },
+                            ticks: {
+                                color: 'rgba(255, 255, 255, 0.7)'
+                            }
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            labels: {
+                                color: 'rgba(255, 255, 255, 0.9)'
+                            }
+                        }
+                    }
+                }
+            });
+        });
+    }
+});
+
+// Smooth scroll for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            target.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+    });
+});
+
+// Performance optimization: Throttle scroll events
+function throttle(func, wait) {
+    let timeout;
+    return function executedFunction(...args) {
+        const later = () => {
+            clearTimeout(timeout);
+            func(...args);
+        };
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+    };
+}
+
+window.addEventListener('scroll', throttle(() => {
+    // Any scroll-based animations go here
+}, 16)); // ~60fps
+
+// Easter egg: Konami code
+let konamiCode = [];
+const konamiSequence = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'KeyB', 'KeyA'];
+
+document.addEventListener('keydown', (e) => {
+    konamiCode.push(e.code);
+    if (konamiCode.length > konamiSequence.length) {
+        konamiCode.shift();
+    }
+    
+    if (JSON.stringify(konamiCode) === JSON.stringify(konamiSequence)) {
+        // Easter egg activated!
+        document.body.style.animation = 'gradientShift 2s ease infinite';
+        setTimeout(() => {
+            document.body.style.animation = '';
+        }, 5000);
+        konamiCode = [];
+    }
+});
     </script>
+
 </body>
 </html>

@@ -3,69 +3,664 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact | Sushant Rana</title>
+    <title>Contact | Sushant Rana - AI & Machine Learning Engineer</title>
+    <meta name="description" content="Get in touch with Sushant Rana for AI/ML collaborations, research opportunities, and innovative project discussions.">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
     <style>
         :root {
-            --primary: #0d6efd;
-            --secondary: #6c757d;
-            --accent: #ffc107;
+            --primary: #667eea;
+            --secondary: #764ba2;
+            --accent: #f093fb;
+            --cyber-blue: #00f2fe;
+            --cyber-purple: #4facfe;
+            --dark: #0a0e1a;
+            --darker: #050810;
+            --light: #ffffff;
+            --glass-bg: rgba(255, 255, 255, 0.08);
+            --glass-border: rgba(255, 255, 255, 0.15);
+            --gradient-hero: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+            --gradient-cyber: linear-gradient(135deg, #00f2fe 0%, #4facfe 100%);
+            --gradient-warm: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            --text-glow: 0 0 20px rgba(255, 255, 255, 0.5);
         }
+
+        * {
+            box-sizing: border-box;
+        }
+
         body {
             font-family: 'Poppins', sans-serif;
+            overflow-x: hidden;
+            background: var(--dark);
+            color: var(--light);
+            scroll-behavior: smooth;
         }
+
+        /* Animated Background */
+        .animated-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: -2;
+            background: linear-gradient(-45deg, #0a0e1a, #1a1a2e, #16213e, #0f3460);
+            background-size: 400% 400%;
+            animation: gradientShift 20s ease infinite;
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Particle System */
+        .particles-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .particle {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            animation: particleFloat 8s linear infinite;
+        }
+
+        @keyframes particleFloat {
+            0% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 0;
+            }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% {
+                transform: translateY(-100px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        /* Enhanced Navigation */
         .navbar {
-            backdrop-filter: blur(10px);
-            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(25px);
+            background: var(--glass-bg);
+            border-bottom: 1px solid var(--glass-border);
+            transition: all 0.3s ease;
+            padding: 1rem 0;
         }
+
+        .navbar.scrolled {
+            background: rgba(10, 14, 26, 0.9);
+            backdrop-filter: blur(30px);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .navbar-brand {
+            font-weight: 800;
+            font-size: 1.8rem;
+            background: var(--gradient-cyber);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: var(--text-glow);
+            transition: all 0.3s ease;
+        }
+
+        .navbar-brand:hover {
+            transform: scale(1.05);
+            filter: brightness(1.2);
+        }
+
+        .navbar-nav .nav-link {
+            color: rgba(255, 255, 255, 0.8) !important;
+            font-weight: 500;
+            margin: 0 10px;
+            position: relative;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
+        }
+
+        .navbar-nav .nav-link:hover,
+        .navbar-nav .nav-link.active {
+            color: var(--light) !important;
+            text-shadow: var(--text-glow);
+        }
+
+        .navbar-nav .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: var(--gradient-cyber);
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+
+        .navbar-nav .nav-link:hover::after,
+        .navbar-nav .nav-link.active::after {
+            width: 100%;
+            box-shadow: 0 0 10px var(--cyber-blue);
+        }
+
+        /* Hero Section */
         .contact-hero {
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-            min-height: 300px;
+            min-height: 60vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
         }
+
+        .contact-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: var(--gradient-hero);
+            opacity: 0.1;
+            z-index: -1;
+        }
+
+        .hero-title {
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-title .highlight {
+            background: var(--gradient-cyber);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            position: relative;
+        }
+
+        .hero-title .highlight::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: var(--gradient-cyber);
+            filter: blur(20px);
+            opacity: 0.3;
+            z-index: -1;
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1rem, 3vw, 1.3rem);
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.6;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Enhanced Contact Cards */
         .contact-card {
-            transition: transform 0.3s, box-shadow 0.3s;
-            border: none;
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+            height: 100%;
         }
+
+        .contact-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+            transition: left 0.8s;
+            z-index: 1;
+        }
+
+        .contact-card:hover::before {
+            left: 100%;
+        }
+
         .contact-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 
+                0 25px 60px rgba(0, 0, 0, 0.4),
+                0 0 0 1px rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.3);
         }
-        .social-icon {
-            width: 50px;
-            height: 50px;
-            display: inline-flex;
+
+        .card-body {
+            position: relative;
+            z-index: 2;
+            padding: 2.5rem;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 2rem;
+            background: var(--gradient-cyber);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Enhanced Form Styling */
+        .form-label {
+            color: rgba(255, 255, 255, 0.9);
+            font-weight: 600;
+            margin-bottom: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-size: 0.9rem;
+        }
+
+        .form-control {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 15px;
+            color: var(--light);
+            padding: 15px 20px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .form-control:focus {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: var(--cyber-blue);
+            box-shadow: 0 0 0 3px rgba(0, 242, 254, 0.2);
+            color: var(--light);
+        }
+
+        .form-control::placeholder {
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        textarea.form-control {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        /* Enhanced Submit Button */
+        .btn-cyber {
+            background: var(--gradient-cyber);
+            border: none;
+            color: white;
+            font-weight: 600;
+            padding: 15px 40px;
+            border-radius: 50px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0, 242, 254, 0.3);
+            font-size: 1rem;
+        }
+
+        .btn-cyber::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.6s;
+        }
+
+        .btn-cyber:hover::before {
+            left: 100%;
+        }
+
+        .btn-cyber:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 20px 40px rgba(0, 242, 254, 0.5);
+            color: white;
+        }
+
+        .btn-cyber:disabled {
+            opacity: 0.7;
+            transform: none;
+            cursor: not-allowed;
+        }
+
+        /* Contact Info Items */
+        .contact-info-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            background: var(--glass-bg);
+            border-radius: 15px;
+            border: 1px solid var(--glass-border);
+            transition: all 0.3s ease;
+        }
+
+        .contact-info-item:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateX(10px);
+        }
+
+        .contact-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--gradient-cyber);
+            border-radius: 50%;
+            display: flex;
             align-items: center;
             justify-content: center;
+            margin-right: 1.5rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-icon::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: var(--gradient-warm);
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+
+        .contact-info-item:hover .contact-icon::before {
+            opacity: 1;
+        }
+
+        .contact-icon i {
+            color: white;
+            font-size: 1.5rem;
+            z-index: 2;
+            position: relative;
+        }
+
+        .contact-details h5 {
+            color: var(--light);
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+        }
+
+        .contact-details p {
+            color: rgba(255, 255, 255, 0.8);
+            margin: 0;
+            font-size: 1rem;
+        }
+
+        /* Enhanced Social Links */
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+
+        .social-icon {
+            width: 60px;
+            height: 60px;
             border-radius: 50%;
-            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
         }
+
+        .social-icon::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: var(--gradient-cyber);
+            transform: scale(0);
+            transition: all 0.3s ease;
+            border-radius: 50%;
+        }
+
+        .social-icon:hover::before {
+            transform: scale(1);
+        }
+
+        .social-icon i {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 1.5rem;
+            z-index: 2;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
         .social-icon:hover {
-            transform: scale(1.1);
+            transform: translateY(-5px) scale(1.1);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
         }
-        .form-control:focus {
-            border-color: var(--primary);
-            box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+
+        .social-icon:hover i {
+            color: white;
         }
-        #map {
+
+        /* Interactive Map Placeholder */
+        .map-container {
             height: 300px;
+            border-radius: 20px;
+            overflow: hidden;
+            position: relative;
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            backdrop-filter: blur(20px);
+        }
+
+        .map-placeholder {
+            text-align: center;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .map-placeholder i {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: var(--cyber-blue);
+        }
+
+        /* Form Success/Error Messages */
+        .form-message {
+            padding: 1rem 1.5rem;
+            border-radius: 15px;
+            margin-bottom: 1rem;
+            font-weight: 500;
+            text-align: center;
+            display: none;
+        }
+
+        .form-message.success {
+            background: rgba(34, 197, 94, 0.1);
+            border: 1px solid rgba(34, 197, 94, 0.3);
+            color: #22c55e;
+        }
+
+        .form-message.error {
+            background: rgba(239, 68, 68, 0.1);
+            border: 1px solid rgba(239, 68, 68, 0.3);
+            color: #ef4444;
+        }
+
+        /* Footer Enhancement */
+        .footer {
+            background: var(--darker);
+            border-top: 1px solid var(--glass-border);
+            position: relative;
+        }
+
+        .footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: var(--gradient-hero);
+            opacity: 0.05;
+            z-index: -1;
+        }
+
+        .footer-social a {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 1.5rem;
+            margin: 0 15px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .footer-social a:hover {
+            color: var(--cyber-blue);
+            transform: translateY(-3px) scale(1.2);
+            text-shadow: 0 0 20px var(--cyber-blue);
+        }
+
+        .footer-social a::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: var(--cyber-blue);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: all 0.3s ease;
+            opacity: 0.3;
+            z-index: -1;
+        }
+
+        .footer-social a:hover::after {
+            width: 40px;
+            height: 40px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .contact-hero {
+                min-height: 40vh;
+                padding: 2rem 0;
+            }
+            
+            .card-body {
+                padding: 2rem;
+            }
+            
+            .contact-info-item {
+                padding: 1rem;
+                margin-bottom: 1rem;
+            }
+            
+            .contact-icon {
+                width: 50px;
+                height: 50px;
+                margin-right: 1rem;
+            }
+            
+            .contact-icon i {
+                font-size: 1.2rem;
+            }
+            
+            .social-icon {
+                width: 50px;
+                height: 50px;
+            }
+            
+            .social-icon i {
+                font-size: 1.2rem;
+            }
+        }
+
+        /* Loading Animation */
+        .loading-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
             width: 100%;
-            border-radius: 10px;
+            height: 100%;
+            background: var(--dark);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            transition: opacity 0.5s ease;
+        }
+
+        .loading-overlay.fade-out {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .loader {
+            width: 60px;
+            height: 60px;
+            border: 3px solid transparent;
+            border-top: 3px solid var(--cyber-blue);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
         }
     </style>
 </head>
 <body>
+    <!-- Loading Screen -->
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Animated Background -->
+    <div class="animated-bg"></div>
+    
+    <!-- Particles Container -->
+    <div class="particles-container" id="particlesContainer"></div>
+
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3">
+    <nav class="navbar navbar-expand-lg fixed-top" id="navbar">
         <div class="container">
-            <a class="navbar-brand fw-bold" href="index.html">Sushant Rana</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
+            <a class="navbar-brand" href="index.html" data-aos="fade-right">Sushant Rana</a>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <i data-feather="menu" style="color: white;"></i>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
+                <ul class="navbar-nav ms-auto" data-aos="fade-left">
                     <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
                     <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
@@ -77,10 +672,15 @@
     </nav>
 
     <!-- Contact Hero -->
-    <section class="contact-hero d-flex align-items-center">
-        <div class="container py-5 text-center">
-            <h1 class="display-5 fw-bold mb-3" data-aos="fade-up">Let's <span class="text-primary">Connect</span></h1>
-            <p class="lead" data-aos="fade-up" data-aos-delay="100">I'm always interested in discussing AI projects, research opportunities, or potential collaborations.</p>
+    <section class="contact-hero">
+        <div class="container text-center">
+            <h1 class="hero-title" data-aos="fade-up">
+                Let's <span class="highlight">Connect</span>
+            </h1>
+            <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="200">
+                Ready to collaborate on groundbreaking AI projects? Let's discuss innovative solutions 
+                and push the boundaries of machine learning together.
+            </p>
         </div>
     </section>
 
@@ -88,84 +688,108 @@
     <section class="py-5">
         <div class="container py-5">
             <div class="row g-4">
-                <div class="col-lg-6" data-aos="fade-right">
-                    <div class="card contact-card h-100 border-0 shadow-sm">
-                        <div class="card-body p-5">
-                            <h2 class="fw-bold mb-4">Get In Touch</h2>
+                <!-- Contact Form -->
+                <div class="col-lg-7" data-aos="fade-right">
+                    <div class="contact-card">
+                        <div class="card-body">
+                            <h2 class="section-title">
+                                <i data-feather="send" class="me-3"></i>Get In Touch
+                            </h2>
+                            
+                            <div id="formMessage" class="form-message"></div>
+                            
                             <form id="contactForm" action="https://formspree.io/f/xzzjbdry" method="POST">
-                                <div class="mb-3">
-                                    <label for="name" class="form-label">Name</label>
-                                    <input type="text" class="form-control" id="name" name="name" required>
+                                <div class="row">
+                                    <div class="col-md-6 mb-4">
+                                        <label for="name" class="form-label">Full Name</label>
+                                        <input type="text" class="form-control" id="name" name="name" required placeholder="Your Name">
+                                    </div>
+                                    <div class="col-md-6 mb-4">
+                                        <label for="email" class="form-label">Email Address</label>
+                                        <input type="email" class="form-control" id="email" name="email" required placeholder="your@email.com">
+                                    </div>
                                 </div>
-                                <div class="mb-3">
-                                    <label for="email" class="form-label">Email</label>
-                                    <input type="email" class="form-control" name="email" id="email" required>
-                                </div>
-                                <div class="mb-3">
+                                <div class="mb-4">
                                     <label for="subject" class="form-label">Subject</label>
-                                    <input type="text" class="form-control" name="subject" id="subject" required>
+                                    <input type="text" class="form-control" id="subject" name="subject" required placeholder="Project Collaboration">
                                 </div>
-                                <div class="mb-3">
+                                <div class="mb-4">
                                     <label for="message" class="form-label">Message</label>
-                                    <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
+                                    <textarea class="form-control" id="message" name="message" rows="6" required placeholder="Tell me about your project or idea..."></textarea>
                                 </div>
-                                <button type="submit" class="btn btn-primary px-4">Send Message</button>
+                                <button type="submit" class="btn btn-cyber" id="submitBtn">
+                                    <i data-feather="send" class="me-2"></i>Send Message
+                                </button>
                             </form>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-6" data-aos="fade-left">
-                    <div class="card contact-card h-100 border-0 shadow-sm">
-                        <div class="card-body p-5">
-                            <h2 class="fw-bold mb-4">Contact Info</h2>
-                            <div class="mb-5">
-                                <div class="d-flex align-items-center mb-3">
-                                    <div class="bg-primary bg-opacity-10 p-3 rounded-circle me-3">
-                                        <i data-feather="mail" class="text-primary"></i>
-                                    </div>
-                                    <div>
-                                        <h5 class="mb-0">Email</h5>
-                                        <p class="mb-0 text-muted">sushanrana2005@gmail.com</p>
-                                    </div>
+                
+                <!-- Contact Info -->
+                <div class="col-lg-5" data-aos="fade-left">
+                    <div class="contact-card">
+                        <div class="card-body">
+                            <h2 class="section-title">
+                                <i data-feather="user" class="me-3"></i>Contact Info
+                            </h2>
+                            
+                            <div class="contact-info-item">
+                                <div class="contact-icon">
+                                    <i data-feather="mail"></i>
                                 </div>
-                                <div class="d-flex align-items-center mb-3">
-                                    <div class="bg-primary bg-opacity-10 p-3 rounded-circle me-3">
-                                        <i data-feather="phone" class="text-primary"></i>
-                                    </div>
-                                    <div>
-                                        <h5 class="mb-0">Phone</h5>
-                                        <p class="mb-0 text-muted">+91 6395487715</p>
-                                    </div>
-                                </div>
-                                <div class="d-flex align-items-center">
-                                    <div class="bg-primary bg-opacity-10 p-3 rounded-circle me-3">
-                                        <i data-feather="map-pin" class="text-primary"></i>
-                                    </div>
-                                    <div>
-                                        <h5 class="mb-0">Location</h5>
-                                        <p class="mb-0 text-muted">Uttrakhand, India</p>
-                                    </div>
+                                <div class="contact-details">
+                                    <h5>Email</h5>
+                                    <p>sushantrana2005@gmail.com</p>
                                 </div>
                             </div>
                             
-                            <h3 class="fw-bold mb-4">Find Me On</h3>
-                            <div class="d-flex gap-3">
-                                <a href="https://www.linkedin.com/in/sushantrana05/" class="social-icon bg-primary text-white">
+                            <div class="contact-info-item">
+                                <div class="contact-icon">
+                                    <i data-feather="phone"></i>
+                                </div>
+                                <div class="contact-details">
+                                    <h5>Phone</h5>
+                                    <p>+91 6395487715</p>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-info-item">
+                                <div class="contact-icon">
+                                    <i data-feather="map-pin"></i>
+                                </div>
+                                <div class="contact-details">
+                                    <h5>Location</h5>
+                                    <p>Uttarakhand, India</p>
+                                </div>
+                            </div>
+                            
+                            <h3 class="section-title mt-5">
+                                <i data-feather="globe" class="me-3"></i>Find Me Online
+                            </h3>
+                            
+                            <div class="social-links">
+                                <a href="https://www.linkedin.com/in/sushantrana05/" class="social-icon" target="_blank" aria-label="LinkedIn">
                                     <i data-feather="linkedin"></i>
                                 </a>
-                                <a href="https://github.com/sushanrana2005" class="social-icon bg-dark text-white">
+                                <a href="https://github.com/imSushant2005" class="social-icon" target="_blank" aria-label="GitHub">
                                     <i data-feather="github"></i>
                                 </a>
-                                <a href="https://twitter.com/SushantRana_05" class="social-icon bg-info text-white">
+                                <a href="https://twitter.com/SushantRana_05" class="social-icon" target="_blank" aria-label="Twitter">
                                     <i data-feather="twitter"></i>
                                 </a>
-                                <a href="https://www.instagram.com/lavi_rana.07/" class="social-icon bg-warning text-white">
+                                <a href="https://www.instagram.com/lavi_rana.07/" class="social-icon" target="_blank" aria-label="Instagram">
                                     <i data-feather="instagram"></i>
                                 </a>
                             </div>
                             
                             <div class="mt-5">
-                                <div id="map"></div>
+                                <div class="map-container">
+                                    <div class="map-placeholder">
+                                        <i data-feather="map-pin"></i>
+                                        <h5>Uttarakhand, India</h5>
+                                        <p>Open to remote collaborations worldwide</p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -175,60 +799,370 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-dark text-white py-4">
+    <footer class="footer py-5">
         <div class="container">
-            <div class="row">
-                <div class="col-md-6">
-                    <p class="mb-0">© 2023 Sushant Rana. All rights reserved.</p>
+            <div class="row align-items-center">
+                <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                    <p class="mb-0" style="color: rgba(255, 255, 255, 0.7);">
+                        © 2025 Sushant Rana. Crafted with passion for AI.
+                    </p>
                 </div>
-                <div class="col-md-6 text-md-end">
-                    <a href="https://github.com/imSushant2005" class="text-white me-3"><i data-feather="github"></i></a>
-                    <a href="https://www.linkedin.com/in/sushantrana05/" class="text-white me-3"><i data-feather="linkedin"></i></a>
-                    <a href="mailto:sushantrana2005@gmail.com" class="text-white"><i data-feather="mail"></i></a>
+                <div class="col-md-6 text-center text-md-end">
+                    <div class="footer-social">
+                        <a href="https://github.com/imSushant2005" target="_blank" aria-label="GitHub Profile">
+                            <i data-feather="github"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/sushantrana05/" target="_blank" aria-label="LinkedIn Profile">
+                            <i data-feather="linkedin"></i>
+                        </a>
+                        <a href="mailto:sushantrana2005@gmail.com" aria-label="Email Sushant Rana">
+                            <i data-feather="mail"></i>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
     </footer>
 
+    <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
+        // Initialize AOS
         AOS.init({
-            duration: 800,
-            easing: 'ease-in-out'
+            duration: 1000,
+            easing: 'ease-in-out',
+            once: true,
+            offset: 100
         });
+        
+        // Initialize Feather Icons
         feather.replace();
-        
-        // Initialize Google Map
-        function initMap() {
-            // In a real implementation, you would use Google Maps API
-            console.log("Map would be initialized here with Google Maps API");
+
+        // Create Animated Particles
+        function createParticles() {
+            const particlesContainer = document.getElementById('particlesContainer');
+            const numberOfParticles = 30;
+
+            for (let i = 0; i < numberOfParticles; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                
+                const size = Math.random() * 6 + 2;
+                const posX = Math.random() * 100;
+                const delay = Math.random() * 8;
+                
+                particle.style.width = size + 'px';
+                particle.style.height = size + 'px';
+                particle.style.left = posX + '%';
+                particle.style.animationDelay = delay + 's';
+                particle.style.animationDuration = (8 + Math.random() * 4) + 's';
+                
+                particlesContainer.appendChild(particle);
+            }
         }
-        
-        // Form submission
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            const form = this;
-            const data = new FormData(form);
-            fetch(form.action, {
-                method: 'POST',
-                body: data,
-                headers: { 'Accept': 'application/json' }
-            }).then(response => {
-                if (response.ok) {
-                    alert('Thank you! Your message has been sent.');
-                    form.reset();
+
+        // Navbar scroll effect
+        function navbarScroll() {
+            window.addEventListener('scroll', () => {
+                const navbar = document.getElementById('navbar');
+                if (window.scrollY > 100) {
+                    navbar.classList.add('scrolled');
                 } else {
-                    alert('Oops! There was a problem sending your message.');
+                    navbar.classList.remove('scrolled');
                 }
-            }).catch(error => {
-                alert('Oops! There was a problem sending your message.');
+            });
+        }
+
+        // Enhanced Form Submission
+        function setupFormSubmission() {
+            const form = document.getElementById('contactForm');
+            const submitBtn = document.getElementById('submitBtn');
+            const formMessage = document.getElementById('formMessage');
+            
+            form.addEventListener('submit', async function(e) {
+                e.preventDefault();
+                
+                // Disable submit button
+                submitBtn.disabled = true;
+                submitBtn.innerHTML = '<i data-feather="loader" class="me-2"></i>Sending...';
+                feather.replace();
+                
+                // Hide previous messages
+                formMessage.style.display = 'none';
+                
+                try {
+                    const formData = new FormData(form);
+                    const response = await fetch(form.action, {
+                        method: 'POST',
+                        body: formData,
+                        headers: { 'Accept': 'application/json' }
+                    });
+                    
+                    if (response.ok) {
+                        // Success
+                        formMessage.className = 'form-message success';
+                        formMessage.innerHTML = '<i data-feather="check-circle" class="me-2"></i>Thank you! Your message has been sent successfully.';
+                        formMessage.style.display = 'block';
+                        form.reset();
+                        
+                        // Add success animation
+                        setTimeout(() => {
+                            formMessage.style.display = 'none';
+                        }, 5000);
+                    } else {
+                        throw new Error('Network response was not ok');
+                    }
+                } catch (error) {
+                    // Error
+                    formMessage.className = 'form-message error';
+                    formMessage.innerHTML = '<i data-feather="alert-circle" class="me-2"></i>Oops! There was a problem sending your message. Please try again.';
+                    formMessage.style.display = 'block';
+                }
+                
+                // Re-enable submit button
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = '<i data-feather="send" class="me-2"></i>Send Message';
+                feather.replace();
+            });
+        }
+
+        // Interactive form field effects
+        function setupFormInteractions() {
+            const formControls = document.querySelectorAll('.form-control');
+            
+            formControls.forEach(control => {
+                // Focus effect
+                control.addEventListener('focus', function() {
+                    this.parentElement.style.transform = 'translateY(-2px)';
+                });
+                
+                // Blur effect
+                control.addEventListener('blur', function() {
+                    this.parentElement.style.transform = 'translateY(0)';
+                });
+                
+                // Input animation
+                control.addEventListener('input', function() {
+                    if (this.value.length > 0) {
+                        this.style.borderColor = 'var(--cyber-blue)';
+                        this.style.boxShadow = '0 0 0 3px rgba(0, 242, 254, 0.1)';
+                    } else {
+                        this.style.borderColor = 'var(--glass-border)';
+                        this.style.boxShadow = 'none';
+                    }
+                });
+            });
+        }
+
+        // Mouse tracking effect for cards
+        function mouseTrackingEffect() {
+            document.addEventListener('mousemove', (e) => {
+                const cards = document.querySelectorAll('.contact-card');
+                
+                cards.forEach(card => {
+                    const rect = card.getBoundingClientRect();
+                    const x = e.clientX - rect.left;
+                    const y = e.clientY - rect.top;
+                    
+                    const centerX = rect.width / 2;
+                    const centerY = rect.height / 2;
+                    
+                    const rotateX = (y - centerY) / 20;
+                    const rotateY = (centerX - x) / 20;
+                    
+                    if (x >= 0 && x <= rect.width && y >= 0 && y <= rect.height) {
+                        card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateZ(10px)`;
+                    } else {
+                        card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) translateZ(0px)';
+                    }
+                });
+            });
+        }
+
+        // Animated counter for social media (if you want to add stats)
+        function animateNumbers() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const counter = entry.target;
+                        const target = parseInt(counter.getAttribute('data-target'));
+                        const increment = target / 100;
+                        let current = 0;
+                        
+                        const updateCounter = () => {
+                            if (current < target) {
+                                current += increment;
+                                counter.textContent = Math.ceil(current);
+                                setTimeout(updateCounter, 20);
+                            } else {
+                                counter.textContent = target;
+                            }
+                        };
+                        
+                        updateCounter();
+                        observer.unobserve(counter);
+                    }
+                });
+            });
+            
+            document.querySelectorAll('[data-target]').forEach(counter => {
+                observer.observe(counter);
+            });
+        }
+
+        // Loading screen handler
+        function handleLoadingScreen() {
+            const loadingOverlay = document.getElementById('loadingOverlay');
+            
+            window.addEventListener('load', () => {
+                setTimeout(() => {
+                    loadingOverlay.classList.add('fade-out');
+                }, 500);
+            });
+        }
+
+        // Contact info click to copy
+        function setupClickToCopy() {
+            const contactItems = document.querySelectorAll('.contact-info-item');
+            
+            contactItems.forEach(item => {
+                const details = item.querySelector('.contact-details p');
+                if (details) {
+                    item.addEventListener('click', async () => {
+                        try {
+                            await navigator.clipboard.writeText(details.textContent);
+                            
+                            // Visual feedback
+                            const originalText = details.textContent;
+                            details.textContent = 'Copied!';
+                            details.style.color = 'var(--cyber-blue)';
+                            
+                            setTimeout(() => {
+                                details.textContent = originalText;
+                                details.style.color = 'rgba(255, 255, 255, 0.8)';
+                            }, 1500);
+                        } catch (err) {
+                            console.log('Failed to copy text');
+                        }
+                    });
+                    
+                    // Add cursor pointer
+                    item.style.cursor = 'pointer';
+                    
+                    // Add tooltip
+                    item.title = 'Click to copy';
+                }
+            });
+        }
+
+        // Social media hover effects with sound (optional)
+        function setupSocialEffects() {
+            const socialIcons = document.querySelectorAll('.social-icon');
+            
+            socialIcons.forEach(icon => {
+                icon.addEventListener('mouseenter', () => {
+                    // Create ripple effect
+                    const ripple = document.createElement('div');
+                    ripple.style.cssText = `
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        width: 0;
+                        height: 0;
+                        background: rgba(255, 255, 255, 0.3);
+                        border-radius: 50%;
+                        transform: translate(-50%, -50%);
+                        pointer-events: none;
+                        animation: ripple 0.6s ease-out;
+                    `;
+                    
+                    const style = document.createElement('style');
+                    style.textContent = `
+                        @keyframes ripple {
+                            to {
+                                width: 100px;
+                                height: 100px;
+                                opacity: 0;
+                            }
+                        }
+                    `;
+                    document.head.appendChild(style);
+                    
+                    icon.appendChild(ripple);
+                    
+                    setTimeout(() => {
+                        ripple.remove();
+                        style.remove();
+                    }, 600);
+                });
+            });
+        }
+
+        // Initialize all functions
+        document.addEventListener('DOMContentLoaded', () => {
+            handleLoadingScreen();
+            createParticles();
+            navbarScroll();
+            setupFormSubmission();
+            setupFormInteractions();
+            mouseTrackingEffect();
+            animateNumbers();
+            setupClickToCopy();
+            setupSocialEffects();
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
             });
         });
-        
-        // Initialize map when page loads
-        window.onload = initMap;
-    </script>
 
+        // Performance optimization: Throttle scroll events
+        function throttle(func, wait) {
+            let timeout;
+            return function executedFunction(...args) {
+                const later = () => {
+                    clearTimeout(timeout);
+                    func(...args);
+                };
+                clearTimeout(timeout);
+                timeout = setTimeout(later, wait);
+            };
+        }
+
+        // Apply throttling to scroll events
+        window.addEventListener('scroll', throttle(() => {
+            // Any scroll-based animations go here
+        }, 16)); // ~60fps
+
+        // Easter egg: Konami code
+        let konamiCode = [];
+        const konamiSequence = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'KeyB', 'KeyA'];
+
+        document.addEventListener('keydown', (e) => {
+            konamiCode.push(e.code);
+            if (konamiCode.length > konamiSequence.length) {
+                konamiCode.shift();
+            }
+            
+            if (JSON.stringify(konamiCode) === JSON.stringify(konamiSequence)) {
+                // Easter egg activated!
+                document.body.style.animation = 'gradientShift 2s ease infinite';
+                setTimeout(() => {
+                    document.body.style.animation = '';
+                }, 5000);
+                konamiCode = [];
+            }
+        });
+    </script>
 </body>
 </html>
