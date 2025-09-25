@@ -197,7 +197,7 @@
             left: -20px;
             right: -20px;
             bottom: -20px;
-            background: var(--gradient-2);
+            background: var(--gradient-cyber);
             border-radius: 50%;
             filter: blur(20px);
             opacity: 0.5;
@@ -209,7 +209,44 @@
             0% { opacity: 0.3; transform: scale(1); }
             100% { opacity: 0.7; transform: scale(1.1); }
         }
+        .profile-rings {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 120%;
+            height: 120%;
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            animation: ringRotate 15s linear infinite;
+        }
 
+        .profile-rings::before,
+        .profile-rings::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+        }
+
+        .profile-rings::before {
+            width: 130%;
+            height: 130%;
+            animation: ringRotate 20s linear infinite reverse;
+        }
+
+        .profile-rings::after {
+            width: 150%;
+            height: 150%;
+            animation: ringRotate 25s linear infinite;
+        }
+         @keyframes ringRotate {
+            from { transform: translate(-50%, -50%) rotate(0deg); }
+            to { transform: translate(-50%, -50%) rotate(360deg); }
+        }
         /* Interactive Skills Bars */
         .skill-bar {
             background: rgba(255, 255, 255, 0.1);
@@ -331,7 +368,7 @@
 
         /* Interactive Buttons */
         .btn-gradient {
-            background: var(--gradient-1);
+            background: var(--gradient-cyber);
             border: none;
             color: white;
             font-weight: 600;
@@ -351,7 +388,7 @@
             left: -100%;
             width: 100%;
             height: 100%;
-            background: var(--gradient-2);
+            background: var(--gradient-cyber);
             transition: left 0.3s;
             z-index: -1;
         }
@@ -402,7 +439,7 @@
             width: 60px;
             height: 60px;
             border-radius: 50%;
-            background: var(--gradient-2);
+            background: var(--gradient-cyber);
             border: none;
             color: white;
             box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
@@ -435,7 +472,7 @@
         }
 
         .cert-badge:hover {
-            background: var(--gradient-3);
+            background: var(--gradient-cyber);
             transform: translateY(-2px);
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
         }
@@ -466,7 +503,7 @@
         }
 
         .text-gradient {
-            background: var(--gradient-1);
+            background: var(--gradient-hero);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -546,6 +583,7 @@
                     <div class="col-lg-4 text-center mt-4 mt-lg-0" data-aos="fade-left">
                         <div class="profile-container">
                             <div class="profile-glow"></div>
+                            <div class="profile-rings"></div>
                             <img src="images/myphoto.jpg" alt="Profile photo of Sushant Rana" class="profile-img">
                         </div>
                     </div>
@@ -671,10 +709,8 @@
                             <i data-feather="file-text" class="me-3"></i> Certifications
                         </h3>
                         <div class="d-flex flex-wrap">
-                            <span class="cert-badge">TensorFlow Developer</span>
-                            <span class="cert-badge">AWS Machine Learning</span>
-                            <span class="cert-badge">Python Data Science</span>
-                            <span class="cert-badge">Deep Learning Specialization</span>
+                            <a href="https://drive.google.com/file/d/1gj-hKVox8D1wUb6u823xB64avH8fvXo2/view?usp=drive_link" class="cert-badge">Ethical Hacking</a>
+                            <a href="https://drive.google.com/file/d/1o7gKRabvF69msEQ5zjBTaxzk-Pqe8EXr/view?usp=drive_link" class="cert-badge">Java</a>
                         </div>
                     </div>
                 </div>
