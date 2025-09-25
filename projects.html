@@ -72,9 +72,13 @@ body {
 
 .particle {
     position: absolute;
-    background: rgba(255, 255, 255, 0.1);
+    width: 2px;
+    height: 2px;
+    background: var(--primary);
     border-radius: 50%;
     animation: particleFloat 8s linear infinite;
+    opacity: 0.7;
+    box-shadow: 0 0 6px var(--primary);
 }
 
 @keyframes particleFloat {
@@ -506,15 +510,18 @@ body {
             <div class="row g-4">
                 <div class="col-lg-4 col-md-6" data-aos="fade-up">
                     <div class="project-card card h-100 border-0 shadow-sm" data-bs-toggle="modal" data-bs-target="#project1Modal">
-                        <img src="http://static.photos/science/640x360/2" class="project-img card-img-top" alt="Sentiment Analysis">
+                        <video class="project-image" class="project-img card-img-top" style="margin-top: 3.5%;" controls alt="fightcam">
+                            <source src="assets/fightcam.mp4" type="video/mp4" >
+                            Your browser does not support the video tag.
+                        </video>
                         <div class="card-body">
-                            <h5 class="card-title">Sentiment Analysis Engine</h5>
-                            <p class="card-text text-muted">Understanding human emotions through text using NLP techniques.</p>
+                            <h5 class="card-title">FightCam</h5>
+                            <p class="card-text text-muted">Detect human actions and analyze actions directly from camera input with high accuracy.</p>
                             <div class="mt-3 tech-badges">
                                 <span class="badge tech-badge">Python</span>
-                                <span class="badge tech-badge">NLTK</span>
-                                <span class="badge tech-badge">TensorFlow</span>
-                                <span class="badge tech-badge">Flask</span>
+                                <span class="badge tech-badge">OpenCV</span>
+                                <span class="badge tech-badge">MediaPipe</span>
+                                <span class="badge tech-badge">Pydirectinput</span>
                             </div>
                         </div>
                     </div>
@@ -522,10 +529,10 @@ body {
 
                 <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
                     <div class="project-card card h-100 border-0 shadow-sm" data-bs-toggle="modal" data-bs-target="#project2Modal">
-                        <img src="http://static.photos/technology/640x360/3" class="project-img card-img-top" alt="Image Classification">
+                        <img src="assets/image.png" class="project-img card-img-top" alt="Image Classification">
                         <div class="card-body">
                             <h5 class="card-title">Image Classification Model</h5>
-                            <p class="card-text text-muted">Computer vision system that categorizes images with 94% accuracy.</p>
+                            <p class="card-text text-muted">Computer vision system that categorizes images with **% accuracy.</p>
                             <div class="mt-3 tech-badges">
                                 <span class="badge tech-badge">Python</span>
                                 <span class="badge tech-badge">PyTorch</span>
@@ -538,15 +545,15 @@ body {
 
                 <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
                     <div class="project-card card h-100 border-0 shadow-sm" data-bs-toggle="modal" data-bs-target="#project3Modal">
-                        <img src="http://static.photos/finance/640x360/1" class="project-img card-img-top" alt="Stock Predictor">
+                        <img src="assets/image.png" class="project-img card-img-top" alt="Stock Predictor">
                         <div class="card-body">
-                            <h5 class="card-title">Stock Price Predictor</h5>
-                            <p class="card-text text-muted">LSTM neural network forecasting financial trends.</p>
+                            <h5 class="card-title">Medicine Information System</h5>
+                            <p class="card-text text-muted">AI system providing drug information and interactions.</p>
                             <div class="mt-3 tech-badges">
                                 <span class="badge tech-badge">Python</span>
-                                <span class="badge tech-badge">Keras</span>
-                                <span class="badge tech-badge">LSTM</span>
-                                <span class="badge tech-badge">Pandas</span>
+                                <span class="badge tech-badge">OpenCV</span>
+                                <span class="badge tech-badge">Scikit-learn</span>
+                                <span class="badge tech-badge">Tensorflow</span>
                             </div>
                         </div>
                     </div>
@@ -554,7 +561,7 @@ body {
 
                 <div class="col-lg-4 col-md-6" data-aos="fade-up">
                     <div class="project-card card h-100 border-0 shadow-sm" data-bs-toggle="modal" data-bs-target="#project4Modal">
-                        <img src="http://static.photos/medical/640x360/1" class="project-img card-img-top" alt="Medical Diagnosis">
+                        <img src="assets/image.png" class="project-img card-img-top" alt="Medical Diagnosis">
                         <div class="card-body">
                             <h5 class="card-title">Medical Diagnosis Assistant</h5>
                             <p class="card-text text-muted">AI system supporting doctors in diagnosing diseases from symptoms.</p>
@@ -586,15 +593,14 @@ body {
 
                 <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
                     <div class="project-card card h-100 border-0 shadow-sm" data-bs-toggle="modal" data-bs-target="#project6Modal">
-                        <img src="http://static.photos/education/640x360/1" class="project-img card-img-top" alt="Recommendation System">
+                        <img src="assets/image.png" class="project-img card-img-top" alt="Ai player">
                         <div class="card-body">
-                            <h5 class="card-title">Personalized Learning Recommender</h5>
-                            <p class="card-text text-muted">System suggesting educational content based on user behavior.</p>
+                            <h5 class="card-title">AI game player</h5>
+                            <p class="card-text text-muted">Ai play with user with different strategies.</p>
                             <div class="mt-3 tech-badges">
                                 <span class="badge tech-badge">Python</span>
                                 <span class="badge tech-badge">Surprise</span>
                                 <span class="badge tech-badge">Collaborative Filtering</span>
-                                <span class="badge tech-badge">Django</span>
                             </div>
                         </div>
                     </div>
@@ -607,29 +613,29 @@ body {
         <div class="modal-dialog modal-lg modal-dialog-centered">
             <div class="modal-content glass-modal">
                 <div class="modal-header">
-                    <h5 class="modal-title">Sentiment Analysis Engine</h5>
+                    <h5 class="modal-title">fightcam</h5>
                     <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <img src="http://static.photos/science/1200x630/2" class="img-fluid rounded mb-4 modal-img" alt="Sentiment Analysis">
-                    <p>This project involved building a sentiment analysis model that can accurately classify text into positive, negative, or neutral sentiments. The system was trained on a dataset of 50,000 product reviews and achieved 89% accuracy on the test set.</p>
+                    <video src="assets/fightcam.mp4" class="img-fluid rounded mb-4 modal-img" controls></video>
+                    <p>This project involved building a fightcam model that can accurately detect human actions and analyze actions directly from camera input with high accuracy. The system was trained on a dataset of 50,000 product reviews and achieved 89% accuracy on the test set.</p>
                     <p>Key features include:</p>
                     <ul>
-                        <li>Custom word embeddings trained on domain-specific vocabulary</li>
-                        <li>Attention mechanism to identify sentiment-bearing words</li>
-                        <li>Deployed as a REST API serving predictions in real-time</li>
+                        <li>Real-time pose and face landmark detection using OpenCV & MediaPipe</li>
+                        <li>Action recognition pipeline to detect fights and aggressive gestures</li>
+                        <li>Integrated with live camera feed for instant predictions and alerts</li>
                     </ul>
                     <div class="chart-container">
                         <canvas id="accuracyChart1"></canvas>
                     </div>
                     <div class="mt-4">
-                        <span class="badge bg-primary me-2">NLP</span>
-                        <span class="badge bg-primary me-2">Deep Learning</span>
-                        <span class="badge bg-primary">Web Deployment</span>
+                        <span class="badge bg-primary me-2">OpenCV</span>
+                        <span class="badge bg-primary me-2">Python</span>
+                        <span class="badge bg-primary">MediaPipe</span>
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <a href="#" class="btn btn-outline-secondary me-2"><i data-feather="github"></i> View Code</a>
+                    <a href="https://github.com/imSushant2005/Fightcam-motion_controller_SDK_for_PC_games." class="btn btn-outline-secondary me-2"><i data-feather="github"></i> View Code</a>
                     <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
                 </div>
             </div>
@@ -644,8 +650,8 @@ body {
                     <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <img src="http://static.photos/technology/1200x630/3" class="img-fluid rounded mb-4 modal-img" alt="Image Classification">
-                    <p>A convolutional neural network designed to classify images into 10 different categories. The model was trained on CIFAR-10 dataset and achieved 94% accuracy through careful architecture design and data augmentation.</p>
+                    <img src="assets/image.png" class="img-fluid rounded mb-4 modal-img" alt="Image Classification">
+                    <p>A convolutional neural network designed to classify images into 10 different categories. The model was trained on ****** dataset and achieved **% accuracy through careful architecture design and data augmentation.</p>
                     <p>Technical highlights:</p>
                     <ul>
                         <li>Custom ResNet architecture with skip connections</li>
@@ -797,7 +803,7 @@ document.addEventListener('DOMContentLoaded', () => {
             new Chart(ctx1, {
                 type: 'bar',
                 data: {
-                    labels: ['Baseline', 'With Embeddings', 'Final Model'],
+                    labels: ['starting with openc', 'with proper tuning with opencv', 'Final Model'],
                     datasets: [{
                         label: 'Accuracy (%)',
                         data: [72, 85, 89],

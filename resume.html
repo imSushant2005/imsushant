@@ -11,29 +11,32 @@
     <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
     <style>
         :root {
-            --primary: #3B82F6; /* Vibrant Tech Blue */
-            --secondary: #9333EA; /* Futuristic Purple */
-            --accent: rgba(255, 255, 255, 0.08); /* Glassmorphism background */
-            --dark: #1E293B; /* Deep Navy for text */
-            --light: #E2E8F0; /* Muted Gray for borders/sections */
-            --gradient-1: linear-gradient(135deg, #3B82F6 0%, #9333EA 100%);
-            --gradient-2: linear-gradient(135deg, #9333EA 0%, #F43F5E 100%);
-            --gradient-3: linear-gradient(135deg, #06B6D4 0%, #3B82F6 100%);
+            --primary: #667eea;
+            --secondary: #764ba2;
+            --accent: #f093fb;
+            --cyber-blue: #00f2fe;
+            --cyber-purple: #4facfe;
+            --dark: #0a0e1a;
+            --darker: #050810;
+            --light: #ffffff;
             --glass-bg: rgba(255, 255, 255, 0.08);
             --glass-border: rgba(255, 255, 255, 0.15);
+            --gradient-hero: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+            --gradient-cyber: linear-gradient(135deg, #00f2fe 0%, #4facfe 100%);
+            --gradient-warm: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            --text-glow: 0 0 20px rgba(255, 255, 255, 0.5);
         }
 
         * {
             box-sizing: border-box;
         }
 
-        body {
+       body {
             font-family: 'Poppins', sans-serif;
+            overflow-x: hidden;
+            background: var(--dark);
+            color: var(--light);
             scroll-behavior: smooth;
-            background: linear-gradient(-45deg, #0F172A, #1E293B, #312E81, #1E1B4B);
-            background-size: 400% 400%;
-            animation: gradientShift 15s ease infinite;
-            min-height: 100vh;
         }
 
         @keyframes gradientShift {
@@ -44,40 +47,60 @@
 
         /* Glassmorphism Navigation */
         .navbar {
-            backdrop-filter: blur(20px);
+            backdrop-filter: blur(25px);
             background: var(--glass-bg);
             border-bottom: 1px solid var(--glass-border);
-            box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
             transition: all 0.3s ease;
+            padding: 0.3rem 0;
+        }
+
+        .navbar.scrolled {
+            background: rgba(10, 14, 26, 0.9);
+            backdrop-filter: blur(30px);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
         }
 
         .navbar-brand {
-            background: var(--gradient-1);
+            font-weight: 800;
+            font-size: 1.8rem;
+            background: var(--gradient-cyber);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            font-weight: 700;
+            text-shadow: var(--text-glow);
+            transition: all 0.3s ease;
+        }
+
+        .navbar-brand:hover {
+            transform: scale(1.05);
+            filter: brightness(1.2);
         }
 
         .navbar-nav .nav-link {
-            color: white !important;
+            color: rgba(255, 255, 255, 0.8) !important;
             font-weight: 500;
-            transition: all 0.3s ease;
+            margin: 0 10px;
             position: relative;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
         }
-        .nav-link:hover,
-        .nav-link.active {
-            color: var(--primary) !important;
-            text-shadow: 0 0 10px var(--primary);
+
+        .navbar-nav .nav-link:hover,
+        .navbar-nav .nav-link.active {
+            color: var(--light) !important;
+            text-shadow: var(--text-glow);
         }
+
         .navbar-nav .nav-link::after {
             content: '';
             position: absolute;
+            bottom: -5px;
+            left: 50%;
             width: 0;
             height: 2px;
-            bottom: 0;
-            left: 50%;
-            background: var(--gradient-2);
+            background: var(--gradient-cyber);
             transition: all 0.3s ease;
             transform: translateX(-50%);
         }
@@ -85,6 +108,7 @@
         .navbar-nav .nav-link:hover::after,
         .navbar-nav .nav-link.active::after {
             width: 100%;
+            box-shadow: 0 0 10px var(--cyber-blue);
         }
 
         /* Animated Particles Background */

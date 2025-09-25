@@ -72,9 +72,13 @@
 
         .particle {
             position: absolute;
-            background: rgba(255, 255, 255, 0.1);
+            width: 2px;
+            height: 2px;
+            background: var(--primary);
             border-radius: 50%;
             animation: particleFloat 8s linear infinite;
+            opacity: 0.7;
+            box-shadow: 0 0 6px var(--primary);
         }
 
         @keyframes particleFloat {
@@ -743,13 +747,15 @@
             <div class="row g-4">
                 <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
                     <div class="project-card">
-                        <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" 
-                             class="project-image" alt="Sentiment Analysis Project">
+                        <video class="project-image" controls>
+                            <source src="assets/fightcam.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
                         <div class="project-content">
-                            <h5 class="project-title">Sentiment Analysis Engine</h5>
+                            <h5 class="project-title">fightcam</h5>
                             <p class="project-description">
-                                Advanced NLP system that analyzes human emotions through text, 
-                                achieving 94% accuracy in sentiment classification.
+                                Real-time AI system using OpenCV and MediaPipe to detect human actions  
+                                and analyze actions directly from camera input with high accuracy.
                             </p>
                             <a href="projects.html" class="project-btn">
                                 <i data-feather="arrow-right" class="me-1"></i>Explore
@@ -760,12 +766,12 @@
                 
                 <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
                     <div class="project-card">
-                        <img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" 
+                        <img src="assets/image.png" 
                              class="project-image" alt="Computer Vision Project">
                         <div class="project-content">
-                            <h5 class="project-title">Vision Recognition System</h5>
+                            <h5 class="project-title">Vision Recognition</h5>
                             <p class="project-description">
-                                Deep learning model for image classification using CNNs, 
+                                Deep learning model for image classification , 
                                 capable of identifying objects with remarkable precision.
                             </p>
                             <a href="projects.html" class="project-btn">
@@ -777,13 +783,13 @@
                 
                 <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
                     <div class="project-card">
-                        <img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" 
+                        <img src="assets/image.png" 
                              class="project-image" alt="Financial Prediction Project">
                         <div class="project-content">
-                            <h5 class="project-title">Financial Forecasting AI</h5>
+                            <h5 class="project-title">Voice translator using ai</h5>
                             <p class="project-description">
-                                LSTM neural network that predicts market trends and stock prices, 
-                                leveraging time-series analysis for financial insights.
+                                LSTM neural network that translates spoken language in real-time, 
+                                enabling seamless communication across languages.
                             </p>
                             <a href="projects.html" class="project-btn">
                                 <i data-feather="arrow-right" class="me-1"></i>Explore
