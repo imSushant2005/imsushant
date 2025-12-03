@@ -1,14 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Resume | Sushant Rana - AI & ML Engineer</title>
     <link rel="canonical" href="https://imsushant2005.github.io/imsushant/resume.html" />
-    <meta name="description" content="Resume of Sushant Rana, an aspiring AI & Machine Learning Engineer. Explore projects, skills, education, and download a professional PDF resume.">
+    <meta name="description"
+        content="Resume of Sushant Rana, an aspiring AI & Machine Learning Engineer. Explore projects, skills, education, and download a professional PDF resume.">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="assets/css/style.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
     <style>
         :root {
@@ -32,7 +36,7 @@
             box-sizing: border-box;
         }
 
-       body {
+        body {
             font-family: 'Poppins', sans-serif;
             overflow-x: hidden;
             background: var(--dark);
@@ -41,9 +45,17 @@
         }
 
         @keyframes gradientShift {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
         }
 
         /* Glassmorphism Navigation */
@@ -139,8 +151,15 @@
                 transform: translateY(100vh) rotate(0deg);
                 opacity: 0;
             }
-            10% { opacity: 1; }
-            90% { opacity: 1; }
+
+            10% {
+                opacity: 1;
+            }
+
+            90% {
+                opacity: 1;
+            }
+
             100% {
                 transform: translateY(-100px) rotate(360deg);
                 opacity: 0;
@@ -188,8 +207,15 @@
         }
 
         @keyframes profileFloat {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); }
+
+            0%,
+            100% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
         }
 
         .profile-glow {
@@ -207,9 +233,17 @@
         }
 
         @keyframes glowPulse {
-            0% { opacity: 0.3; transform: scale(1); }
-            100% { opacity: 0.7; transform: scale(1.1); }
+            0% {
+                opacity: 0.3;
+                transform: scale(1);
+            }
+
+            100% {
+                opacity: 0.7;
+                transform: scale(1.1);
+            }
         }
+
         .profile-rings {
             position: absolute;
             top: 50%;
@@ -244,46 +278,59 @@
             height: 150%;
             animation: ringRotate 25s linear infinite;
         }
-         @keyframes ringRotate {
-            from { transform: translate(-50%, -50%) rotate(0deg); }
-            to { transform: translate(-50%, -50%) rotate(360deg); }
+
+        @keyframes ringRotate {
+            from {
+                transform: translate(-50%, -50%) rotate(0deg);
+            }
+
+            to {
+                transform: translate(-50%, -50%) rotate(360deg);
+            }
         }
+
         /* Interactive Skills Bars */
-       .skill-bar {
-    background: rgba(255, 255, 255, 0.1);
-    height: 10px;
-    border-radius: 5px;
-    overflow: hidden;
-    margin: 10px 0;
-    position: relative;
-}
+        .skill-bar {
+            background: rgba(255, 255, 255, 0.1);
+            height: 10px;
+            border-radius: 5px;
+            overflow: hidden;
+            margin: 10px 0;
+            position: relative;
+        }
 
-.skill-progress {
-    width: 0; /* Start from 0 for animation */
-    height: 100%;
-    background: var(--gradient-cyber);
-    border-radius: 5px;
-    transition: width 2s ease;
-    position: relative;
-    overflow: hidden;
-}
+        .skill-progress {
+            width: 0;
+            /* Start from 0 for animation */
+            height: 100%;
+            background: var(--gradient-cyber);
+            border-radius: 5px;
+            transition: width 2s ease;
+            position: relative;
+            overflow: hidden;
+        }
 
-.skill-progress::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.6), transparent);
-    animation: shimmer 2s infinite;
-    z-index: 1;
-}
+        .skill-progress::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.6), transparent);
+            animation: shimmer 2s infinite;
+            z-index: 1;
+        }
 
-@keyframes shimmer {
-    0% { left: -100%; }
-    100% { left: 100%; }
-}
+        @keyframes shimmer {
+            0% {
+                left: -100%;
+            }
+
+            100% {
+                left: 100%;
+            }
+        }
 
         /* Enhanced Timeline */
         .timeline {
@@ -333,8 +380,15 @@
         }
 
         @keyframes timelinePulse {
-            0% { transform: scale(1); box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); }
-            100% { transform: scale(1.2); box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3); }
+            0% {
+                transform: scale(1);
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            }
+
+            100% {
+                transform: scale(1.2);
+                box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+            }
         }
 
         /* Animated Cards */
@@ -356,7 +410,7 @@
             left: -100%;
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
             transition: left 0.8s;
         }
 
@@ -404,8 +458,8 @@
             transform: translateY(-3px);
             box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
         }
-        * Loading Animation */
-        .page-loader {
+
+        * Loading Animation */ .page-loader {
             position: fixed;
             top: 0;
             left: 0;
@@ -433,6 +487,7 @@
             border-radius: 50%;
             animation: spin 1s linear infinite;
         }
+
         /* Floating Elements */
         .floating-btn {
             position: fixed;
@@ -451,8 +506,15 @@
         }
 
         @keyframes floatBounce {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); }
+
+            0%,
+            100% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
         }
 
         .floating-btn:hover {
@@ -486,15 +548,15 @@
                 width: 150px;
                 height: 150px;
             }
-            
+
             .timeline {
                 padding-left: 40px;
             }
-            
+
             .timeline::before {
                 left: 20px;
             }
-            
+
             .timeline-item::before {
                 left: -27px;
             }
@@ -532,13 +594,22 @@
         }
 
         @keyframes iconBounce {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.1); }
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.1);
+            }
         }
     </style>
 </head>
+
 <body>
     <!-- Animated Particles -->
+    <div class="mesh-background"></div>
     <div class="particles" id="particles"></div>
 
     <!-- Navigation -->
@@ -649,7 +720,7 @@
                         <h3 class="fw-bold mb-4 text-white d-flex align-items-center">
                             <i data-feather="award" class="me-3"></i> Skills
                         </h3>
-                        
+
                         <h5 class="text-white mt-4 mb-3">Technical</h5>
                         <div class="skill-item mb-3">
                             <div class="d-flex justify-content-between text-white-glass mb-1">
@@ -660,7 +731,7 @@
                                 <div class="skill-progress" data-width="90%"></div>
                             </div>
                         </div>
-                        
+
                         <div class="skill-item mb-3">
                             <div class="d-flex justify-content-between text-white-glass mb-1">
                                 <span>Machine Learning & Deep Learning</span>
@@ -670,7 +741,7 @@
                                 <div class="skill-progress" data-width="85%"></div>
                             </div>
                         </div>
-                        
+
                         <div class="skill-item mb-3">
                             <div class="d-flex justify-content-between text-white-glass mb-1">
                                 <span>Natural Language Processing</span>
@@ -680,7 +751,7 @@
                                 <div class="skill-progress" data-width="80%"></div>
                             </div>
                         </div>
-                        
+
                         <div class="skill-item mb-3">
                             <div class="d-flex justify-content-between text-white-glass mb-1">
                                 <span>Computer Vision</span>
@@ -690,7 +761,7 @@
                                 <div class="skill-progress" data-width="75%"></div>
                             </div>
                         </div>
-                        
+
                         <h5 class="text-white mt-4 mb-3">Tools</h5>
                         <ul class="list-unstyled text-white-glass">
                             <li class="mb-2">• Git & GitHub</li>
@@ -712,8 +783,10 @@
                             <i data-feather="file-text" class="me-3"></i> Certifications
                         </h3>
                         <div class="d-flex flex-wrap">
-                            <a href="https://drive.google.com/file/d/1gj-hKVox8D1wUb6u823xB64avH8fvXo2/view?usp=drive_link" class="cert-badge">Ethical Hacking</a>
-                            <a href="https://drive.google.com/file/d/1o7gKRabvF69msEQ5zjBTaxzk-Pqe8EXr/view?usp=drive_link" class="cert-badge">Java</a>
+                            <a href="https://drive.google.com/file/d/1gj-hKVox8D1wUb6u823xB64avH8fvXo2/view?usp=drive_link"
+                                class="cert-badge">Ethical Hacking</a>
+                            <a href="https://drive.google.com/file/d/1o7gKRabvF69msEQ5zjBTaxzk-Pqe8EXr/view?usp=drive_link"
+                                class="cert-badge">Java</a>
                         </div>
                     </div>
                 </div>
@@ -722,7 +795,8 @@
     </section>
 
     <!-- Floating Download Button -->
-    <button class="floating-btn d-none d-md-flex align-items-center justify-content-center" onclick="window.open('assets/Sushant_Rana.pdf', '_blank')">
+    <button class="floating-btn d-none d-md-flex align-items-center justify-content-center"
+        onclick="window.open('assets/Sushant_Rana.pdf', '_blank')">
         <i data-feather="download"></i>
     </button>
 
@@ -737,7 +811,8 @@
                     <a href="https://github.com/imSushant2005" target="_blank" class="text-white me-3 contact-icon">
                         <i data-feather="github"></i>
                     </a>
-                    <a href="https://www.linkedin.com/in/sushantrana05/" target="_blank" class="text-white me-3 contact-icon">
+                    <a href="https://www.linkedin.com/in/sushantrana05/" target="_blank"
+                        class="text-white me-3 contact-icon">
                         <i data-feather="linkedin"></i>
                     </a>
                     <a href="mailto:sushantrana2005@gmail.com" class="text-white contact-icon">
@@ -753,13 +828,13 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         // Initialize AOS
-        AOS.init({ 
-            duration: 1000, 
-            easing: 'ease-in-out', 
+        AOS.init({
+            duration: 1000,
+            easing: 'ease-in-out',
             once: true,
             offset: 100
         });
-        
+
         // Initialize Feather Icons
         feather.replace();
 
@@ -771,46 +846,46 @@
             for (let i = 0; i < numberOfParticles; i++) {
                 const particle = document.createElement('div');
                 particle.className = 'particle';
-                
+
                 const size = Math.random() * 6 + 2;
                 const posX = Math.random() * 100;
                 const posY = Math.random() * 100;
                 const delay = Math.random() * 6;
-                
+
                 particle.style.width = size + 'px';
                 particle.style.height = size + 'px';
                 particle.style.left = posX + '%';
                 particle.style.top = posY + '%';
                 particle.style.animationDelay = delay + 's';
                 particle.style.animationDuration = (6 + Math.random() * 4) + 's';
-                
+
                 particlesContainer.appendChild(particle);
             }
         }
 
         // Animate Skill Bars
         function animateSkills() {
-    const skillBars = document.querySelectorAll('.skill-progress');
-    
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const progressBar = entry.target;
-                const width = progressBar.getAttribute('data-width');
-                
-                setTimeout(() => {
-                    progressBar.style.width = width; // Animate width
-                }, 300);
-                
-                observer.unobserve(entry.target);
-            }
-        });
-    }, {
-        threshold: 0.5
-    });
-    
-    skillBars.forEach(bar => observer.observe(bar));
-}
+            const skillBars = document.querySelectorAll('.skill-progress');
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const progressBar = entry.target;
+                        const width = progressBar.getAttribute('data-width');
+
+                        setTimeout(() => {
+                            progressBar.style.width = width; // Animate width
+                        }, 300);
+
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.5
+            });
+
+            skillBars.forEach(bar => observer.observe(bar));
+        }
 
 
         // Parallax Effect for Header
@@ -819,7 +894,7 @@
                 const scrolled = window.pageYOffset;
                 const parallax = document.querySelector('.resume-header');
                 const speed = scrolled * 0.5;
-                
+
                 if (parallax) {
                     parallax.style.transform = `translateY(${speed}px)`;
                 }
@@ -844,18 +919,18 @@
         function mouseTrackingEffect() {
             document.addEventListener('mousemove', (e) => {
                 const cards = document.querySelectorAll('.animated-card, .glass-card');
-                
+
                 cards.forEach(card => {
                     const rect = card.getBoundingClientRect();
                     const x = e.clientX - rect.left;
                     const y = e.clientY - rect.top;
-                    
+
                     const centerX = rect.width / 2;
                     const centerY = rect.height / 2;
-                    
+
                     const rotateX = (y - centerY) / 10;
                     const rotateY = (centerX - x) / 10;
-                    
+
                     if (x >= 0 && x <= rect.width && y >= 0 && y <= rect.height) {
                         card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateZ(10px)`;
                     } else {
@@ -884,5 +959,7 @@
             });
         });
     </script>
+    <script src="assets/js/main.js"></script>
 </body>
+
 </html>

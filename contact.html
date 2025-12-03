@@ -1,14 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact | Sushant Rana - AI & Machine Learning Engineer</title>
     <link rel="canonical" href="https://imsushant2005.github.io/imsushant/contact.html" />
-    <meta name="description" content="Get in touch with Sushant Rana for AI/ML collaborations, research opportunities, and innovative project discussions.">
+    <meta name="description"
+        content="Get in touch with Sushant Rana for AI/ML collaborations, research opportunities, and innovative project discussions.">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="assets/css/style.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
     <style>
         :root {
@@ -41,12 +45,20 @@
         }
 
 
-        
+
 
         @keyframes gradientShift {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
         }
 
         /* Particle System */
@@ -76,8 +88,15 @@
                 transform: translateY(100vh) rotate(0deg);
                 opacity: 0;
             }
-            10% { opacity: 1; }
-            90% { opacity: 1; }
+
+            10% {
+                opacity: 1;
+            }
+
+            90% {
+                opacity: 1;
+            }
+
             100% {
                 transform: translateY(-100px) rotate(360deg);
                 opacity: 0;
@@ -226,7 +245,7 @@
             left: -100%;
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
             transition: left 0.8s;
             z-index: 1;
         }
@@ -237,7 +256,7 @@
 
         .contact-card:hover {
             transform: translateY(-10px) scale(1.02);
-            box-shadow: 
+            box-shadow:
                 0 25px 60px rgba(0, 0, 0, 0.4),
                 0 0 0 1px rgba(255, 255, 255, 0.1);
             border-color: rgba(255, 255, 255, 0.3);
@@ -570,31 +589,31 @@
                 min-height: 40vh;
                 padding: 2rem 0;
             }
-            
+
             .card-body {
                 padding: 2rem;
             }
-            
+
             .contact-info-item {
                 padding: 1rem;
                 margin-bottom: 1rem;
             }
-            
+
             .contact-icon {
                 width: 50px;
                 height: 50px;
                 margin-right: 1rem;
             }
-            
+
             .contact-icon i {
                 font-size: 1.2rem;
             }
-            
+
             .social-icon {
                 width: 50px;
                 height: 50px;
             }
-            
+
             .social-icon i {
                 font-size: 1.2rem;
             }
@@ -630,11 +649,17 @@
         }
 
         @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
         }
     </style>
 </head>
+
 <body>
     <!-- Loading Screen -->
     <div class="loading-overlay" id="loadingOverlay">
@@ -642,8 +667,8 @@
     </div>
 
     <!-- Animated Background -->
-    <div class="animated-bg"></div>
-    
+    <div class="mesh-background"></div>
+
     <!-- Particles Container -->
     <div class="particles-container" id="particlesContainer"></div>
 
@@ -673,7 +698,7 @@
                 Let's <span class="highlight">Connect</span>
             </h1>
             <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="200">
-                Ready to collaborate on groundbreaking AI projects? Let's discuss innovative solutions 
+                Ready to collaborate on groundbreaking AI projects? Let's discuss innovative solutions
                 and push the boundaries of machine learning together.
             </p>
         </div>
@@ -690,27 +715,31 @@
                             <h2 class="section-title">
                                 <i data-feather="send" class="me-3"></i>Get In Touch
                             </h2>
-                            
+
                             <div id="formMessage" class="form-message"></div>
-                            
+
                             <form id="contactForm" action="https://formspree.io/f/xzzjbdry" method="POST">
                                 <div class="row">
                                     <div class="col-md-6 mb-4">
                                         <label for="name" class="form-label">Full Name</label>
-                                        <input type="text" class="form-control" id="name" name="name" required placeholder="Your Name">
+                                        <input type="text" class="form-control" id="name" name="name" required
+                                            placeholder="Your Name">
                                     </div>
                                     <div class="col-md-6 mb-4">
                                         <label for="email" class="form-label">Email Address</label>
-                                        <input type="email" class="form-control" id="email" name="email" required placeholder="your@email.com">
+                                        <input type="email" class="form-control" id="email" name="email" required
+                                            placeholder="your@email.com">
                                     </div>
                                 </div>
                                 <div class="mb-4">
                                     <label for="subject" class="form-label">Subject</label>
-                                    <input type="text" class="form-control" id="subject" name="subject" required placeholder="Project Collaboration">
+                                    <input type="text" class="form-control" id="subject" name="subject" required
+                                        placeholder="Project Collaboration">
                                 </div>
                                 <div class="mb-4">
                                     <label for="message" class="form-label">Message</label>
-                                    <textarea class="form-control" id="message" name="message" rows="6" required placeholder="Tell me about your project or idea..."></textarea>
+                                    <textarea class="form-control" id="message" name="message" rows="6" required
+                                        placeholder="Tell me about your project or idea..."></textarea>
                                 </div>
                                 <button type="submit" class="btn btn-cyber" id="submitBtn">
                                     <i data-feather="send" class="me-2"></i>Send Message
@@ -719,7 +748,7 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <!-- Contact Info -->
                 <div class="col-lg-5" data-aos="fade-left">
                     <div class="contact-card">
@@ -727,7 +756,7 @@
                             <h2 class="section-title">
                                 <i data-feather="user" class="me-3"></i>Contact Info
                             </h2>
-                            
+
                             <div class="contact-info-item">
                                 <div class="contact-icon">
                                     <i data-feather="mail"></i>
@@ -737,7 +766,7 @@
                                     <p>sushantrana2005@gmail.com</p>
                                 </div>
                             </div>
-                            
+
                             <div class="contact-info-item">
                                 <div class="contact-icon">
                                     <i data-feather="phone"></i>
@@ -747,7 +776,7 @@
                                     <p>+91 6395487715</p>
                                 </div>
                             </div>
-                            
+
                             <div class="contact-info-item">
                                 <div class="contact-icon">
                                     <i data-feather="map-pin"></i>
@@ -757,26 +786,30 @@
                                     <p>Uttarakhand, India</p>
                                 </div>
                             </div>
-                            
+
                             <h3 class="section-title mt-5">
                                 <i data-feather="globe" class="me-3"></i>Find Me Online
                             </h3>
-                            
+
                             <div class="social-links">
-                                <a href="https://www.linkedin.com/in/sushantrana05/" class="social-icon" target="_blank" aria-label="LinkedIn">
+                                <a href="https://www.linkedin.com/in/sushantrana05/" class="social-icon" target="_blank"
+                                    aria-label="LinkedIn">
                                     <i data-feather="linkedin"></i>
                                 </a>
-                                <a href="https://github.com/imSushant2005" class="social-icon" target="_blank" aria-label="GitHub">
+                                <a href="https://github.com/imSushant2005" class="social-icon" target="_blank"
+                                    aria-label="GitHub">
                                     <i data-feather="github"></i>
                                 </a>
-                                <a href="https://twitter.com/SushantRana_05" class="social-icon" target="_blank" aria-label="Twitter">
+                                <a href="https://twitter.com/SushantRana_05" class="social-icon" target="_blank"
+                                    aria-label="Twitter">
                                     <i data-feather="twitter"></i>
                                 </a>
-                                <a href="https://www.instagram.com/lavi_rana.07/" class="social-icon" target="_blank" aria-label="Instagram">
+                                <a href="https://www.instagram.com/lavi_rana.07/" class="social-icon" target="_blank"
+                                    aria-label="Instagram">
                                     <i data-feather="instagram"></i>
                                 </a>
                             </div>
-                            
+
                             <div class="mt-5">
                                 <div class="map-container">
                                     <div class="map-placeholder">
@@ -807,7 +840,8 @@
                         <a href="https://github.com/imSushant2005" target="_blank" aria-label="GitHub Profile">
                             <i data-feather="github"></i>
                         </a>
-                        <a href="https://www.linkedin.com/in/sushantrana05/" target="_blank" aria-label="LinkedIn Profile">
+                        <a href="https://www.linkedin.com/in/sushantrana05/" target="_blank"
+                            aria-label="LinkedIn Profile">
                             <i data-feather="linkedin"></i>
                         </a>
                         <a href="mailto:sushantrana2005@gmail.com" aria-label="Email Sushant Rana">
@@ -830,7 +864,7 @@
             once: true,
             offset: 100
         });
-        
+
         // Initialize Feather Icons
         feather.replace();
 
@@ -842,19 +876,19 @@
             for (let i = 0; i < numberOfParticles; i++) {
                 const particle = document.createElement('div');
                 particle.className = 'particle';
-                
+
                 const size = Math.random() * 6 + 2;
                 const posX = Math.random() * 100;
                 const posY = Math.random() * 100;
                 const delay = Math.random() * 6;
-                
+
                 particle.style.width = size + 'px';
                 particle.style.height = size + 'px';
                 particle.style.left = posX + '%';
                 particle.style.top = posY + '%';
                 particle.style.animationDelay = delay + 's';
                 particle.style.animationDuration = (6 + Math.random() * 4) + 's';
-                
+
                 particlesContainer.appendChild(particle);
             }
         }
@@ -876,32 +910,33 @@
             const form = document.getElementById('contactForm');
             const submitBtn = document.getElementById('submitBtn');
             const formMessage = document.getElementById('formMessage');
-            
-            form.addEventListener('submit', async function(e) {
+
+            form.addEventListener('submit', async function (e) {
                 e.preventDefault();
-                
+
                 // Disable submit button
                 submitBtn.disabled = true;
                 submitBtn.innerHTML = '<i data-feather="loader" class="me-2"></i>Sending...';
                 feather.replace();
-                
+
                 // Hide previous messages
                 formMessage.style.display = 'none';
-                
+
                 try {
                     const formData = new FormData(form);
                     const response = await fetch(form.action, {
+                        headers: { 'Accept': 'application/json' },
                         method: 'POST',
                         body: formData,
                     });
-                    
+
                     if (response.ok) {
                         // Success
                         formMessage.className = 'form-message success';
                         formMessage.innerHTML = '<i data-feather="check-circle" class="me-2"></i>Thanks for your message! I’ll be in touch soon.';
                         formMessage.style.display = 'block';
                         form.reset();
-                        
+
                         // Add success animation
                         setTimeout(() => {
                             formMessage.style.display = 'none';
@@ -915,7 +950,7 @@
                     formMessage.innerHTML = '<i data-feather="alert-circle" class="me-2"></i>Oops! There was a problem sending your message. Please try again.';
                     formMessage.style.display = 'block';
                 }
-                
+
                 // Re-enable submit button
                 submitBtn.disabled = false;
                 submitBtn.innerHTML = '<i data-feather="send" class="me-2"></i>Send Message';
@@ -926,20 +961,20 @@
         // Interactive form field effects
         function setupFormInteractions() {
             const formControls = document.querySelectorAll('.form-control');
-            
+
             formControls.forEach(control => {
                 // Focus effect
-                control.addEventListener('focus', function() {
+                control.addEventListener('focus', function () {
                     this.parentElement.style.transform = 'translateY(-2px)';
                 });
-                
+
                 // Blur effect
-                control.addEventListener('blur', function() {
+                control.addEventListener('blur', function () {
                     this.parentElement.style.transform = 'translateY(0)';
                 });
-                
+
                 // Input animation
-                control.addEventListener('input', function() {
+                control.addEventListener('input', function () {
                     if (this.value.length > 0) {
                         this.style.borderColor = 'var(--cyber-blue)';
                         this.style.boxShadow = '0 0 0 3px rgba(0, 242, 254, 0.1)';
@@ -955,18 +990,18 @@
         function mouseTrackingEffect() {
             document.addEventListener('mousemove', (e) => {
                 const cards = document.querySelectorAll('.contact-card');
-                
+
                 cards.forEach(card => {
                     const rect = card.getBoundingClientRect();
                     const x = e.clientX - rect.left;
                     const y = e.clientY - rect.top;
-                    
+
                     const centerX = rect.width / 2;
                     const centerY = rect.height / 2;
-                    
+
                     const rotateX = (y - centerY) / 20;
                     const rotateY = (centerX - x) / 20;
-                    
+
                     if (x >= 0 && x <= rect.width && y >= 0 && y <= rect.height) {
                         card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateZ(10px)`;
                     } else {
@@ -985,7 +1020,7 @@
                         const target = parseInt(counter.getAttribute('data-target'));
                         const increment = target / 100;
                         let current = 0;
-                        
+
                         const updateCounter = () => {
                             if (current < target) {
                                 current += increment;
@@ -995,13 +1030,13 @@
                                 counter.textContent = target;
                             }
                         };
-                        
+
                         updateCounter();
                         observer.unobserve(counter);
                     }
                 });
             });
-            
+
             document.querySelectorAll('[data-target]').forEach(counter => {
                 observer.observe(counter);
             });
@@ -1010,7 +1045,7 @@
         // Loading screen handler
         function handleLoadingScreen() {
             const loadingOverlay = document.getElementById('loadingOverlay');
-            
+
             window.addEventListener('load', () => {
                 setTimeout(() => {
                     loadingOverlay.classList.add('fade-out');
@@ -1021,19 +1056,19 @@
         // Contact info click to copy
         function setupClickToCopy() {
             const contactItems = document.querySelectorAll('.contact-info-item');
-            
+
             contactItems.forEach(item => {
                 const details = item.querySelector('.contact-details p');
                 if (details) {
                     item.addEventListener('click', async () => {
                         try {
                             await navigator.clipboard.writeText(details.textContent);
-                            
+
                             // Visual feedback
                             const originalText = details.textContent;
                             details.textContent = 'Copied!';
                             details.style.color = 'var(--cyber-blue)';
-                            
+
                             setTimeout(() => {
                                 details.textContent = originalText;
                                 details.style.color = 'rgba(255, 255, 255, 0.8)';
@@ -1042,10 +1077,10 @@
                             console.log('Failed to copy text');
                         }
                     });
-                    
+
                     // Add cursor pointer
                     item.style.cursor = 'pointer';
-                    
+
                     // Add tooltip
                     item.title = 'Click to copy';
                 }
@@ -1055,7 +1090,7 @@
         // Social media hover effects with sound (optional)
         function setupSocialEffects() {
             const socialIcons = document.querySelectorAll('.social-icon');
-            
+
             socialIcons.forEach(icon => {
                 icon.addEventListener('mouseenter', () => {
                     // Create ripple effect
@@ -1072,7 +1107,7 @@
                         pointer-events: none;
                         animation: ripple 0.6s ease-out;
                     `;
-                    
+
                     const style = document.createElement('style');
                     style.textContent = `
                         @keyframes ripple {
@@ -1084,9 +1119,9 @@
                         }
                     `;
                     document.head.appendChild(style);
-                    
+
                     icon.appendChild(ripple);
-                    
+
                     setTimeout(() => {
                         ripple.remove();
                         style.remove();
@@ -1149,7 +1184,7 @@
             if (konamiCode.length > konamiSequence.length) {
                 konamiCode.shift();
             }
-            
+
             if (JSON.stringify(konamiCode) === JSON.stringify(konamiSequence)) {
                 // Easter egg activated!
                 document.body.style.animation = 'gradientShift 2s ease infinite';
@@ -1160,5 +1195,7 @@
             }
         });
     </script>
+    <script src="assets/js/main.js"></script>
 </body>
+
 </html>
