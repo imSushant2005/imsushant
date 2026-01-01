@@ -34,16 +34,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 3D Tilt Effect for Cards
     const cards = document.querySelectorAll('.tilt-card');
-    
+
     cards.forEach(card => {
         card.addEventListener('mousemove', (e) => {
             const rect = card.getBoundingClientRect();
             const x = e.clientX - rect.left;
             const y = e.clientY - rect.top;
-            
+
             const centerX = rect.width / 2;
             const centerY = rect.height / 2;
-            
+
             const rotateX = ((y - centerY) / centerY) * -10; // Max rotation deg
             const rotateY = ((x - centerX) / centerX) * 10;
 
@@ -59,10 +59,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const typewriterElement = document.getElementById('typewriter');
     if (typewriterElement) {
         const phrases = [
-            "AI Engineer",
-            "Deep Learning Specialist",
-            "Computer Vision Expert",
-            "Problem Solver"
+            "Salesforce Developer",
+            "CRM Architect",
+            "AI Automation Specialist",
+            "Business Solutions Builder"
         ];
         let phraseIndex = 0;
         let charIndex = 0;
@@ -71,7 +71,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         function type() {
             const currentPhrase = phrases[phraseIndex];
-            
+
             if (isDeleting) {
                 typewriterElement.textContent = currentPhrase.substring(0, charIndex - 1);
                 charIndex--;
