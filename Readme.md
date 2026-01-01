@@ -1,83 +1,72 @@
-# 🌟 Sushant Rana – Portfolio
+# Sushant Rana | Salesforce Developer Portfolio
 
-Welcome to my portfolio repository!  
-This portfolio showcases my projects, skills, and experience as I build my career in **AI/ML, Data Science, and Software Development**.
+**Salesforce Developer | Admin | AI & CRM Solutions**
 
----
+Building intelligent CRM solutions and AI-powered business automation.
 
-## 🚀 Live Portfolio
-🔗 **[View My Portfolio](https://imsushant2005.github.io/imsushant/)**  
+🔗 **[View Live Portfolio](https://imsushant2005.github.io/imsushant/)**
 
 ---
 
-## 🧑‍💻 About Me
-Hi! I'm **Sushant Rana**, a passionate tech enthusiast specializing in:
-- 🤖 **AI/ML Engineering** – Building intelligent solutions with deep learning and LLMs.
-- 💻 **Full-Stack Development** – Creating responsive and modern web apps.
-- 📊 **Data Science** – Turning data into actionable insights.
+## About Me
 
-I love learning new technologies, solving real-world problems, and contributing to open-source projects.
+I'm **Sushant Rana**, a Salesforce Developer and Certified Agentforce Specialist focused on:
 
----
+- ☁️ **Salesforce Development** — Apex, LWC, Flows, Security Model, API Integrations
+- 🤖 **AI & Automation** — LLM-powered workflows, intelligent decision systems
+- 🛠️ **Product Development** — Full-stack apps, system design, API development
 
-## 🛠 Tech Stack
-Here are some tools and technologies I work with:
-
-- **Programming:** Python, JavaScript, C++
-- **Frameworks:** Streamlit, Flask, React, Django
-- **Machine Learning:** TensorFlow, PyTorch, Scikit-learn
-- **Databases:** MySQL, MongoDB
-- **Other Tools:** Git, Docker, Linux, VS Code
-
----
-### Trying Using laptop for Viewing portfolio
-## 📂 Featured Projects
-| Project | Description | Tech |
-|--------|-------------|------|
-| [TalentScout Hiring Assistant](https://github.com/sushantrana2005/Hiringchatbot) | AI-powered chatbot that screens candidates and generates tech-specific interview questions. | Streamlit, GPT API |
-| [Portfolio Website](https://imsushant2005.github.io/imsushant/) | Personal portfolio website showcasing my work, skills, and contact info. | HTML, CSS, JS |
-| [ML Model Deployment](#) | Example deployment of ML model using Flask + Docker. | Python, Flask |
+**Mentored by a Salesforce Architect with 12+ years of industry experience.**
 
 ---
 
-## 📸 Preview
+## Tech Stack
 
-### Home Page
-<p align="center">
-  <img src="images/1.png" alt="Portfolio Screenshot" width="700">
-</p>
+### Salesforce Ecosystem
+`Salesforce Admin` `Apex` `LWC` `Flows` `Security Model` `REST API` `Agentforce`
 
-### About Page
-<p align="center">
-  <img src="images/2.png" alt="Portfolio Screenshot" width="700">
-</p>
+### AI & Automation
+`Python` `LLM Integration` `OpenCV` `TensorFlow` `NLP` `AI Agents`
 
-### Project Page
-<p align="center">
-  <img src="images/3.png" alt="Portfolio Screenshot" width="700">
-</p>
-
-
-### Resume Page
-<p align="center">
-  <img src="images/4.png" alt="Portfolio Screenshot" width="700">
-</p>
-
-### Contact page
-<p align="center">
-  <img src="images/5.png" alt="Portfolio Screenshot" width="700">
-</p>
-
+### Product & Development
+`FastAPI` `React` `Flutter` `SQL/NoSQL` `Git` `Docker`
 
 ---
 
-## 📬 Connect With Me
+## Featured Projects
+
+| Project | Problem Solved | Tech Stack |
+|---------|---------------|------------|
+| **Langua Link** | Language barriers in global teams | FastAPI, RVC, React, WebSockets |
+| **AI Support Chatbot** | High support ticket volume | Transformers, HuggingFace, FastAPI |
+| **FightCam AI** | Manual security monitoring | OpenCV, MediaPipe, Python |
+| **Medical Diagnosis Assistant** | Preliminary diagnosis efficiency | Scikit-learn, XGBoost, Flask |
+
+---
+
+## Certifications
+
+- ✅ **Salesforce Certified Agentforce Specialist**
+
+---
+
+## Experience
+
+- **Junior Software Engineer** — Enterprise CRM workflows and production systems
+- **Salesforce Architecture Mentorship** — Remote training under 12+ years industry expert
+
+---
+
+## Connect
 
 - 📧 **Email:** [sushantrana2005@gmail.com](mailto:sushantrana2005@gmail.com)
-- 💼 **LinkedIn:** [linkedin.com/in/sushantrana2005](https://www.linkedin.com/in/sushantrana05/)
-- 🐙 **GitHub:** [github.com/sushantrana2005](https://github.com/sushantrana2005)
+- 💼 **LinkedIn:** [linkedin.com/in/sushantrana05](https://www.linkedin.com/in/sushantrana05/)
+- 🐙 **GitHub:** [github.com/imSushant2005](https://github.com/imSushant2005)
 
 ---
 
-## ⭐ Feedback
-If you like my portfolio, feel free to **star this repo ⭐** and connect with me!
+**Open to Salesforce Developer / Admin / Consultant roles (WFH or Hybrid)**
+
+---
+
+⭐ If you like this portfolio, feel free to star this repo!
