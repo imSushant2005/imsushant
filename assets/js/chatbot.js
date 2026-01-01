@@ -39,7 +39,10 @@
             'resume': "You can view or download Sushant's resume:\n\n📄 <a href='resume.html'>View Resume Page</a>\n⬇️ <a href='assets/Sushant_Rana.pdf' download>Download PDF</a>",
 
             // Location
-            'location': "Sushant is based in **Uttarakhand, India**.\n\nHe's open to:\n• Remote (WFH) positions\n• Hybrid roles\n• Relocation for the right opportunity"
+            'location': "Sushant is based in **Uttarakhand, India**.\n\nHe's open to:\n• Remote (WFH) positions\n• Hybrid roles\n• Relocation for the right opportunity",
+
+            // Visitors
+            'visitors': "<img src='https://visitor-badge.laobi.icu/badge?page_id=imsushant2005.imsushant' alt='Visitors' style='height: 24px; vertical-align: middle;'> people have visited this portfolio!\n\nThanks for stopping by! 🎉"
         },
 
         // Keywords to match
@@ -56,7 +59,8 @@
             'projects': ['project', 'projects', 'work', 'portfolio', 'built', 'made', 'created'],
             'certification': ['certification', 'certified', 'certificate', 'credential', 'agentforce'],
             'resume': ['resume', 'cv', 'download', 'pdf'],
-            'location': ['location', 'where', 'based', 'live', 'city', 'country', 'remote', 'wfh']
+            'location': ['location', 'where', 'based', 'live', 'city', 'country', 'remote', 'wfh'],
+            'visitors': ['visitor', 'visitors', 'visited', 'views', 'how many', 'count', 'traffic']
         },
 
         fallback: "I'm not sure about that specific question. For detailed discussions, please <a href='contact.html'>contact Sushant directly</a> — he'd love to hear from you! 📩"
